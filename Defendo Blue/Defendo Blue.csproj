@@ -1,0 +1,243 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D2C8D554-3699-4ACA-97BA-001DB2A2D71A}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Defendo_Blue</RootNamespace>
+    <AssemblyName>Defendo Blue</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Win32.Registry, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Win32.Registry.5.0.0\lib\net461\Microsoft.Win32.Registry.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Diagnostics.EventLog, Version=8.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Diagnostics.EventLog.8.0.0\lib\net462\System.Diagnostics.EventLog.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.AccessControl, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.AccessControl.5.0.0\lib\net461\System.Security.AccessControl.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Principal.Windows, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Principal.Windows.5.0.0\lib\net461\System.Security.Principal.Windows.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="VirusTotalNet, Version=2.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\VirusTotalNet.2.2.0\lib\netstandard2.0\VirusTotalNet.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\RegistryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\RegistryForm.Designer.cs">
+      <DependentUpon>RegistryForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ScanfileForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ScanfileForm.Designer.cs">
+      <DependentUpon>ScanfileForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ScanResultForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ScanResultForm.Designer.cs">
+      <DependentUpon>ScanResultForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ScanurlForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ScanurlForm.Designer.cs">
+      <DependentUpon>ScanurlForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\WinEvent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\WinEvent.Designer.cs">
+      <DependentUpon>WinEvent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\RegistryForm.resx">
+      <DependentUpon>RegistryForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ScanfileForm.resx">
+      <DependentUpon>ScanfileForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ScanResultForm.resx">
+      <DependentUpon>ScanResultForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ScanurlForm.resx">
+      <DependentUpon>ScanurlForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\WinEvent.resx">
+      <DependentUpon>WinEvent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="app.manifest" />
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\Defendo_Blue.Forms.WinEventLog.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wallpaperflare.com_wallpaper.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\98778_windows_firewall_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\4417121_firewall_server_fire_wall_web_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\application.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\5173002_alarm_alert_bell_internet_notice_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2303113_controls_grid_menu_navigation_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\4527369_avatar_character_dragon_game_ice_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\4527369_avatar_character_dragon_game_ice_icon1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\5173017_antivirus_internet_protect_safe_security_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\8674904_ic_fluent_fingerprint_regular_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\5172975_crime_finger_fingerprint_identity_internet_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\background-gradient-lights %282%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bg.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\9004757_shield_security_protection_safety_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\9004757_shield_security_protection_safety_icon %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\5173021_antivirus_internet_lock_locked_protect_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\folder-plus-circle_16769522.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\data_1575959.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\5172970_document_file_internet_lock_locked_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\8725957_file_plus_alt_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DefendoBlue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\log.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\199213_log_file_extension_format_icon %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3213274_mobile_padlock_secure_security_smartphone_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\334647_google_play_app_digital_distribution_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2697649_apple_store_app_app store_apps_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Defendo Blue png.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\52641_registry_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2890572_ai_artificial intelligence_brain_electronics_notebook_icon %281%29.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

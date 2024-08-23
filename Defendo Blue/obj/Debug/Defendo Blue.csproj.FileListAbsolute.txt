@@ -1,0 +1,27 @@
+C:\Users\Mert\source\repos\Defendo Blue\Defendo Blue\bin\Debug\Defendo Blue.exe.config
+C:\Users\Mert\source\repos\Defendo Blue\Defendo Blue\bin\Debug\Defendo Blue.exe
+C:\Users\Mert\source\repos\Defendo Blue\Defendo Blue\bin\Debug\Defendo Blue.pdb
+C:\Users\Mert\source\repos\Defendo Blue\Defendo Blue\bin\Debug\Microsoft.Win32.Registry.dll
+C:\Users\Mert\source\repos\Defendo Blue\Defendo Blue\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Mert\source\repos\Defendo Blue\Defendo Blue\bin\Debug\System.Diagnostics.EventLog.dll
+C:\Users\Mert\source\repos\Defendo Blue\Defendo Blue\bin\Debug\System.Security.AccessControl.dll
+C:\Users\Mert\source\repos\Defendo Blue\Defendo Blue\bin\Debug\System.Security.Principal.Windows.dll
+C:\Users\Mert\source\repos\Defendo Blue\Defendo Blue\bin\Debug\VirusTotalNet.dll
+C:\Users\Mert\source\repos\Defendo Blue\Defendo Blue\bin\Debug\Microsoft.Win32.Registry.xml
+C:\Users\Mert\source\repos\Defendo Blue\Defendo Blue\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Mert\source\repos\Defendo Blue\Defendo Blue\bin\Debug\System.Diagnostics.EventLog.xml
+C:\Users\Mert\source\repos\Defendo Blue\Defendo Blue\bin\Debug\System.Security.AccessControl.xml
+C:\Users\Mert\source\repos\Defendo Blue\Defendo Blue\bin\Debug\System.Security.Principal.Windows.xml
+C:\Users\Mert\source\repos\Defendo Blue\Defendo Blue\obj\Debug\Defendo Blue.csproj.AssemblyReference.cache
+C:\Users\Mert\source\repos\Defendo Blue\Defendo Blue\obj\Debug\Defendo_Blue.Form1.resources
+C:\Users\Mert\source\repos\Defendo Blue\Defendo Blue\obj\Debug\Defendo_Blue.Forms.RegistryForm.resources
+C:\Users\Mert\source\repos\Defendo Blue\Defendo Blue\obj\Debug\Defendo_Blue.Forms.ScanfileForm.resources
+C:\Users\Mert\source\repos\Defendo Blue\Defendo Blue\obj\Debug\Defendo_Blue.Forms.ScanResultForm.resources
+C:\Users\Mert\source\repos\Defendo Blue\Defendo Blue\obj\Debug\Defendo_Blue.Forms.ScanUrlForm.resources
+C:\Users\Mert\source\repos\Defendo Blue\Defendo Blue\obj\Debug\Defendo_Blue.Forms.WinEvent.resources
+C:\Users\Mert\source\repos\Defendo Blue\Defendo Blue\obj\Debug\Defendo_Blue.Properties.Resources.resources
+C:\Users\Mert\source\repos\Defendo Blue\Defendo Blue\obj\Debug\Defendo Blue.csproj.GenerateResource.cache
+C:\Users\Mert\source\repos\Defendo Blue\Defendo Blue\obj\Debug\Defendo Blue.csproj.CoreCompileInputs.cache
+C:\Users\Mert\source\repos\Defendo Blue\Defendo Blue\obj\Debug\Defendo .63BA751A.Up2Date
+C:\Users\Mert\source\repos\Defendo Blue\Defendo Blue\obj\Debug\Defendo Blue.exe
+C:\Users\Mert\source\repos\Defendo Blue\Defendo Blue\obj\Debug\Defendo Blue.pdb
