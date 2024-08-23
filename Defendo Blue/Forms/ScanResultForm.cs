@@ -1,7 +1,4 @@
-﻿using System;
-using System.Drawing;  // Font ve renklerle çalışmak için gerekli
-using System.Runtime.Remoting.Contexts;
-using System.Windows.Forms;
+﻿using System.Windows.Forms;
 
 namespace Defendo_Blue.Forms
 {

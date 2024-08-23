@@ -1,7 +1,6 @@
-﻿using System;
+﻿using Microsoft.Win32;
 using System.Data;
 using System.Windows.Forms;
-using Microsoft.Win32;
 
 namespace Defendo_Blue.Forms
 {
@@ -20,10 +19,10 @@ namespace Defendo_Blue.Forms
         {
             dataGridView1 = new DataGridView
             {
-                Dock = DockStyle.Fill, 
-                AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill, 
-                AllowUserToAddRows = false, 
-                AllowUserToDeleteRows = false 
+                Dock = DockStyle.Fill,
+                AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill,
+                AllowUserToAddRows = false,
+                AllowUserToDeleteRows = false
             };
 
             dataTable = new DataTable();
@@ -50,7 +49,7 @@ namespace Defendo_Blue.Forms
                     foreach (string valueName in rk.GetValueNames())
                     {
                         object value = rk.GetValue(valueName);
-                        
+
                         dataTable.Rows.Add(valueName, value);
                     }
                 }
@@ -72,6 +71,6 @@ namespace Defendo_Blue.Forms
             }
         }
 
-   
+
     }
 }

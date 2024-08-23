@@ -68,7 +68,7 @@ namespace Defendo_Blue.Forms
             }
             else
             {
-                e.Effect = DragDropEffects.None;    
+                e.Effect = DragDropEffects.None;
             }
         }
 
@@ -107,7 +107,7 @@ namespace Defendo_Blue.Forms
             resultMessage.AppendLine($"Scan ID: {fileReport.ScanId}");
             resultMessage.AppendLine($"Mesaj: {fileReport.VerboseMsg}\n");
             resultMessage.AppendLine(string.Format("{0,-30} {1}", "Antivirüs Motoru", "Durum"));
-            resultMessage.AppendLine(new string('-', 50)); 
+            resultMessage.AppendLine(new string('-', 50));
 
             if (fileReport.ResponseCode == FileReportResponseCode.Present)
             {
@@ -122,7 +122,7 @@ namespace Defendo_Blue.Forms
             resultForm.ShowDialog();
         }
 
- 
+
 
         private void transparentControls()
         {

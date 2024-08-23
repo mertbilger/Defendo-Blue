@@ -5,7 +5,6 @@ using VirusTotalNet;
 using VirusTotalNet.Objects;
 using VirusTotalNet.ResponseCodes;
 using VirusTotalNet.Results;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Defendo_Blue.Forms
 {

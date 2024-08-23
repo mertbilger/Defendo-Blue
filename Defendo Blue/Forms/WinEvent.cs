@@ -50,25 +50,25 @@ namespace Defendo_Blue.Forms
             {
                 dataTable.Clear();
 
-              
+
                 EventLog log = new EventLog(watchLog);
 
                 foreach (EventLogEntry entry in log.Entries)
                 {
-                    if (entry.InstanceId == 4624) 
+                    if (entry.InstanceId == 4624)
                     {
-                        
+
                         string userName = "Bilinmeyen Kullanıcı";
                         string ipAddress = "Bilinmiyor";
 
-                        if (entry.ReplacementStrings.Length > 5) 
+                        if (entry.ReplacementStrings.Length > 5)
                         {
-                            userName = entry.ReplacementStrings[5]; 
+                            userName = entry.ReplacementStrings[5];
                         }
 
-                        if (entry.ReplacementStrings.Length > 18) 
+                        if (entry.ReplacementStrings.Length > 18)
                         {
-                            ipAddress = entry.ReplacementStrings[18]; 
+                            ipAddress = entry.ReplacementStrings[18];
                         }
 
                         dataTable.Rows.Add(entry.InstanceId, entry.Message);
@@ -92,12 +92,12 @@ namespace Defendo_Blue.Forms
             string userName = "Bilinmeyen Kullanıcı";
             string ipAddress = "Bilinmiyor";
 
-            if (entry.ReplacementStrings.Length > 5) 
+            if (entry.ReplacementStrings.Length > 5)
             {
                 userName = entry.ReplacementStrings[5];
             }
 
-            if (entry.ReplacementStrings.Length > 20) 
+            if (entry.ReplacementStrings.Length > 20)
             {
                 ipAddress = entry.ReplacementStrings[20];
             }
@@ -146,7 +146,7 @@ namespace Defendo_Blue.Forms
                 string details = $"Tarih ve Saat: {logonTime}\n" +
                                  $"Kullanıcı: {userName}\n" +
                                  $"IP Adresi: {ipAddress}\n";
-                                 
+
 
                 MessageBox.Show(details, "Event Log Detail", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
