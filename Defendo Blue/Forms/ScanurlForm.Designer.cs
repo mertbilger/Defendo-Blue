@@ -41,14 +41,14 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(302, 184);
+            this.textBox1.Location = new System.Drawing.Point(412, 184);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(255, 20);
             this.textBox1.TabIndex = 2;
             // 
             // CheckUrl
             // 
-            this.CheckUrl.Location = new System.Drawing.Point(332, 241);
+            this.CheckUrl.Location = new System.Drawing.Point(477, 241);
             this.CheckUrl.Name = "CheckUrl";
             this.CheckUrl.Size = new System.Drawing.Size(141, 32);
             this.CheckUrl.TabIndex = 3;
@@ -56,14 +56,14 @@
             this.CheckUrl.UseVisualStyleBackColor = true;
             this.CheckUrl.Click += new System.EventHandler(this.CheckUrlButton_Click);
             // 
-            // ScanurlForm
+            // ScanUrlForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1193, 546);
             this.Controls.Add(this.CheckUrl);
             this.Controls.Add(this.textBox1);
-            this.Name = "ScanurlForm";
+            this.Name = "ScanUrlForm";
             this.Text = "ScanurlForm";
             this.ResumeLayout(false);
             this.PerformLayout();

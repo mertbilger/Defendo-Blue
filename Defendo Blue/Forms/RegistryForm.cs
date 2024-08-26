@@ -69,7 +69,9 @@ namespace Defendo_Blue.Forms
 
         private void TransparentControl()
         {
-
+            label1.Parent = pictureBox1;
+            label1.BackColor = Color.Transparent;
         }
+
     }
 }

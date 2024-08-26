@@ -1,13 +1,9 @@
-﻿using Defendo_Blue.Forms;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
+﻿using System;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Diagnostics;
+using System.Windows.Forms.DataVisualization.Charting;
+using Defendo_Blue.Forms;
 
 namespace Defendo_Blue
 {
@@ -16,12 +12,18 @@ namespace Defendo_Blue
         private ContextMenuStrip contextMenu;
         private WinEvent winEventForm;
 
+        static readonly PerformanceCounter IdleCounter = new PerformanceCounter("Processor", "% Idle Time", "_Total");
+        static readonly PerformanceCounter RamCounter = new PerformanceCounter("Memory", "Available MBytes");
+
+        private Timer timerUpdate;
+
         public Form1()
         {
             InitializeComponent();
             Setup();
             transparentControls();
-           // this.Load += new EventHandler(Form1_Load);
+            SetupChart();
+            SetupTimer(); // Timer'ı başlatmak için bu yöntemi çağırdık
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -29,7 +31,7 @@ namespace Defendo_Blue
             winEventForm = new WinEvent();
             winEventForm.Load += (s, args) =>
             {
-                winEventForm.Hide(); 
+                winEventForm.Hide();
             };
             winEventForm.Show();
         }
@@ -72,14 +74,77 @@ namespace Defendo_Blue
             contextMenu.Items.Add(option4);
 
             notifyIcon1.ContextMenuStrip = contextMenu;
+        }
 
-            button1.Click += new EventHandler(button1_Click);
+        private void SetupChart()
+        {
+            chartHardware.Series.Clear();
+
+            chartHardware.Series.Clear();
+
+            Series cpuSeries = new Series("CPU Kullanımı");
+            cpuSeries.ChartType = SeriesChartType.Spline;
+            cpuSeries.BorderWidth = 3;
+            cpuSeries.Color = Color.FromArgb(150, Color.Blue); // Şeffaf renk ekledik
+            chartHardware.Series.Add(cpuSeries);
+
+            chartHardware.ChartAreas[0].AxisX.Title = "Zaman (saniye)";
+            chartHardware.ChartAreas[0].AxisX.LabelStyle.Format = "0";
+            chartHardware.ChartAreas[0].AxisX.Interval = 1;
+            chartHardware.ChartAreas[0].AxisX.MajorGrid.Enabled = false;
+            chartHardware.ChartAreas[0].AxisX.Minimum = 0; // Minimum X ekseni değeri
+            chartHardware.ChartAreas[0].AxisX.Maximum = 10; // Maksimum X ekseni değeri
+
+            chartHardware.ChartAreas[0].AxisY.Title = "CPU Kullanımı (%)";
+            chartHardware.ChartAreas[0].AxisY.LabelStyle.Format = "{0}%";
+        }
+
+
+
+        private void SetupTimer()
+        {
+            timerUpdate = new Timer();
+            timerUpdate.Interval = 1000; // 1 saniyede bir güncelle
+            timerUpdate.Tick += TimerUpdate_Tick;
+            timerUpdate.Start();
+        }
+
+        private void TimerUpdate_Tick(object sender, EventArgs e)
+        {
+            float cpuUsage = 100 - IdleCounter.NextValue();
+
+            Series series = chartHardware.Series["CPU Kullanımı"];
+            double currentTime = (DateTime.Now - DateTime.Today).TotalSeconds; // Günün başlangıcından itibaren geçen saniye
+
+            if (series.Points.Count == 0 || series.Points[series.Points.Count - 1].XValue < currentTime)
+            {
+                series.Points.AddXY(currentTime, cpuUsage);
+            }
+            else
+            {
+                // En son noktayı güncelle
+                series.Points[series.Points.Count - 1].YValues[0] = cpuUsage;
+            }
+
+            int maxPoints = 10; // Maksimum gösterilecek nokta sayısı
+            if (series.Points.Count > maxPoints)
+            {
+                series.Points.RemoveAt(0);
+            }
+
+            // X ekseninin maksimum değeri güncelle
+            if (currentTime > chartHardware.ChartAreas[0].AxisX.Maximum)
+            {
+                chartHardware.ChartAreas[0].AxisX.Maximum = currentTime;
+                chartHardware.ChartAreas[0].AxisX.Minimum = currentTime - 10;
+            }
+
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            notifyIcon1.BalloonTipText = "OK";
-            notifyIcon1.ShowBalloonTip(1000);
+            FastScan hızlıTarama = new FastScan();
+            hızlıTarama.Show();
         }
 
         private void button3_Click_1(object sender, EventArgs e)
@@ -139,6 +204,22 @@ namespace Defendo_Blue
         {
             RegistryForm registryForm = new RegistryForm();
             registryForm.Show();
+        }
+
+        private void ShowHardwareInfo()
+        {
+            float cpuUsage = 100 - IdleCounter.NextValue();
+            float ramAvailable = RamCounter.NextValue();
+
+            MessageBox.Show($"CPU Kullanımı: {cpuUsage}%\n",
+                            "Donanım Bilgileri",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Information);
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            ShowHardwareInfo();
         }
     }
 }

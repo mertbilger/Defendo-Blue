@@ -43,7 +43,6 @@ C:\Users\Mert\Source\Repos\mertbilger\Defendo-Blue\Defendo Blue\obj\Debug\Defend
 C:\Users\Mert\Source\Repos\mertbilger\Defendo-Blue\Defendo Blue\obj\Debug\Defendo_Blue.Form1.resources
 C:\Users\Mert\Source\Repos\mertbilger\Defendo-Blue\Defendo Blue\obj\Debug\Defendo_Blue.Forms.RegistryForm.resources
 C:\Users\Mert\Source\Repos\mertbilger\Defendo-Blue\Defendo Blue\obj\Debug\Defendo_Blue.Forms.ScanfileForm.resources
-C:\Users\Mert\Source\Repos\mertbilger\Defendo-Blue\Defendo Blue\obj\Debug\Defendo_Blue.Forms.ScanResultForm.resources
 C:\Users\Mert\Source\Repos\mertbilger\Defendo-Blue\Defendo Blue\obj\Debug\Defendo_Blue.Forms.ScanUrlForm.resources
 C:\Users\Mert\Source\Repos\mertbilger\Defendo-Blue\Defendo Blue\obj\Debug\Defendo_Blue.Forms.WinEvent.resources
 C:\Users\Mert\Source\Repos\mertbilger\Defendo-Blue\Defendo Blue\obj\Debug\Defendo_Blue.Properties.Resources.resources
@@ -52,3 +51,22 @@ C:\Users\Mert\Source\Repos\mertbilger\Defendo-Blue\Defendo Blue\obj\Debug\Defend
 C:\Users\Mert\Source\Repos\mertbilger\Defendo-Blue\Defendo Blue\obj\Debug\Defendo .63BA751A.Up2Date
 C:\Users\Mert\Source\Repos\mertbilger\Defendo-Blue\Defendo Blue\obj\Debug\Defendo Blue.exe
 C:\Users\Mert\Source\Repos\mertbilger\Defendo-Blue\Defendo Blue\obj\Debug\Defendo Blue.pdb
+C:\Users\Mert\source\repos\mertbilger\Defendo-Blue\Defendo Blue\bin\Debug\DocumentFormat.OpenXml.dll
+C:\Users\Mert\source\repos\mertbilger\Defendo-Blue\Defendo Blue\bin\Debug\DocumentFormat.OpenXml.Framework.dll
+C:\Users\Mert\source\repos\mertbilger\Defendo-Blue\Defendo Blue\bin\Debug\DocumentFormat.OpenXml.xml
+C:\Users\Mert\source\repos\mertbilger\Defendo-Blue\Defendo Blue\bin\Debug\DocumentFormat.OpenXml.Framework.xml
+C:\Users\Mert\source\repos\mertbilger\Defendo-Blue\Defendo Blue\obj\Debug\Defendo_Blue.Forms.ScanResultForm.resources
+C:\Users\Mert\source\repos\mertbilger\Defendo-Blue\Defendo Blue\obj\Debug\Defendo_Blue.Forms.FastScan.resources
+C:\Users\Mert\source\repos\mertbilger\Defendo-Blue\Defendo Blue\bin\Debug\Aspose.Words.dll
+C:\Users\Mert\source\repos\mertbilger\Defendo-Blue\Defendo Blue\bin\Debug\Aspose.Words.Pdf2Word.dll
+C:\Users\Mert\source\repos\mertbilger\Defendo-Blue\Defendo Blue\bin\Debug\Aspose.Words.xml
+C:\Users\Mert\source\repos\mertbilger\Defendo-Blue\Defendo Blue\bin\Debug\Aspose.Slides.dll
+C:\Users\Mert\source\repos\mertbilger\Defendo-Blue\Defendo Blue\bin\Debug\Aspose.Slides.xml
+C:\Users\Mert\source\repos\mertbilger\Defendo-Blue\Defendo Blue\bin\Debug\System.Diagnostics.PerformanceCounter.dll
+C:\Users\Mert\source\repos\mertbilger\Defendo-Blue\Defendo Blue\bin\Debug\System.Diagnostics.PerformanceCounter.xml
+C:\Users\Mert\source\repos\mertbilger\Defendo-Blue\Defendo Blue\bin\Debug\ManagedCuda.dll
+C:\Users\Mert\source\repos\mertbilger\Defendo-Blue\Defendo Blue\bin\Debug\System.Drawing.Common.dll
+C:\Users\Mert\source\repos\mertbilger\Defendo-Blue\Defendo Blue\bin\Debug\Hardware.Info.dll
+C:\Users\Mert\source\repos\mertbilger\Defendo-Blue\Defendo Blue\bin\Debug\System.CodeDom.dll
+C:\Users\Mert\source\repos\mertbilger\Defendo-Blue\Defendo Blue\bin\Debug\Hardware.Info.xml
+C:\Users\Mert\source\repos\mertbilger\Defendo-Blue\Defendo Blue\bin\Debug\System.CodeDom.xml

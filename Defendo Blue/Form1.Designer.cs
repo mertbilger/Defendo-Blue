@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
@@ -52,6 +55,7 @@
             this.picLogo = new System.Windows.Forms.PictureBox();
             this.picBack = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.chartHardware = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -64,6 +68,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBack)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartHardware)).BeginInit();
             this.SuspendLayout();
             // 
             // notifyIcon1
@@ -276,6 +281,7 @@
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.chartHardware);
             this.panel3.Controls.Add(this.TagName);
             this.panel3.Controls.Add(this.button4);
             this.panel3.Controls.Add(this.picLogo);
@@ -311,6 +317,7 @@
             this.button4.TabIndex = 3;
             this.button4.Text = "Run Smart Scan";
             this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // picLogo
             // 
@@ -342,6 +349,22 @@
             this.pictureBox5.TabIndex = 0;
             this.pictureBox5.TabStop = false;
             // 
+            // chartHardware
+            // 
+            chartArea1.Name = "ChartArea1";
+            this.chartHardware.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chartHardware.Legends.Add(legend1);
+            this.chartHardware.Location = new System.Drawing.Point(980, 484);
+            this.chartHardware.Name = "chartHardware";
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chartHardware.Series.Add(series1);
+            this.chartHardware.Size = new System.Drawing.Size(340, 183);
+            this.chartHardware.TabIndex = 5;
+            this.chartHardware.Text = "chart1";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 13F);
@@ -370,6 +393,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBack)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartHardware)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -398,6 +422,7 @@
         private System.Windows.Forms.PictureBox pictureBox7;
         private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chartHardware;
     }
 }
 
