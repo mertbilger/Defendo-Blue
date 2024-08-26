@@ -21,7 +21,7 @@ namespace Defendo_Blue
             InitializeComponent();
             Setup();
             transparentControls();
-            this.Load += new EventHandler(Form1_Load);
+           // this.Load += new EventHandler(Form1_Load);
         }
 
         private void Form1_Load(object sender, EventArgs e)

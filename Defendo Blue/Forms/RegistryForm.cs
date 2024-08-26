@@ -1,29 +1,26 @@
-﻿using Microsoft.Win32;
+﻿using System;
 using System.Data;
+using System.Drawing;
+using System.IO;
 using System.Windows.Forms;
+using Microsoft.Win32;
 
 namespace Defendo_Blue.Forms
 {
     public partial class RegistryForm : Form
     {
         private DataTable dataTable;
-
+        
         public RegistryForm()
         {
             InitializeComponent();
             InitializeDataGridView();
             LoadRegistryData();
+            TransparentControl();
         }
-
+   
         private void InitializeDataGridView()
         {
-            dataGridView1 = new DataGridView
-            {
-                Dock = DockStyle.Fill,
-                AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill,
-                AllowUserToAddRows = false,
-                AllowUserToDeleteRows = false
-            };
 
             dataTable = new DataTable();
             dataTable.Columns.Add("Anahtar Adı", typeof(string));
@@ -49,7 +46,7 @@ namespace Defendo_Blue.Forms
                     foreach (string valueName in rk.GetValueNames())
                     {
                         object value = rk.GetValue(valueName);
-
+                        
                         dataTable.Rows.Add(valueName, value);
                     }
                 }
@@ -67,10 +64,12 @@ namespace Defendo_Blue.Forms
                 string keyName = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
                 string value = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
 
-                MessageBox.Show($"Anahtar Adı: {keyName}\nDeğer: {value}", "Hücre Bilgisi");
             }
         }
 
+        private void TransparentControl()
+        {
 
+        }
     }
 }
