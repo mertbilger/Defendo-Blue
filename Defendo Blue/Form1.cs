@@ -23,7 +23,7 @@ namespace Defendo_Blue
             Setup();
             transparentControls();
             SetupChart();
-            SetupTimer(); // Timer'ı başlatmak için bu yöntemi çağırdık
+            SetupTimer(); 
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -85,15 +85,15 @@ namespace Defendo_Blue
             Series cpuSeries = new Series("CPU Kullanımı");
             cpuSeries.ChartType = SeriesChartType.Spline;
             cpuSeries.BorderWidth = 3;
-            cpuSeries.Color = Color.FromArgb(150, Color.Blue); // Şeffaf renk ekledik
+            cpuSeries.Color = Color.FromArgb(150, Color.Blue);
             chartHardware.Series.Add(cpuSeries);
 
             chartHardware.ChartAreas[0].AxisX.Title = "Zaman (saniye)";
             chartHardware.ChartAreas[0].AxisX.LabelStyle.Format = "0";
             chartHardware.ChartAreas[0].AxisX.Interval = 1;
             chartHardware.ChartAreas[0].AxisX.MajorGrid.Enabled = false;
-            chartHardware.ChartAreas[0].AxisX.Minimum = 0; // Minimum X ekseni değeri
-            chartHardware.ChartAreas[0].AxisX.Maximum = 10; // Maksimum X ekseni değeri
+            chartHardware.ChartAreas[0].AxisX.Minimum = 0; 
+            chartHardware.ChartAreas[0].AxisX.Maximum = 10; 
 
             chartHardware.ChartAreas[0].AxisY.Title = "CPU Kullanımı (%)";
             chartHardware.ChartAreas[0].AxisY.LabelStyle.Format = "{0}%";
@@ -104,7 +104,7 @@ namespace Defendo_Blue
         private void SetupTimer()
         {
             timerUpdate = new Timer();
-            timerUpdate.Interval = 1000; // 1 saniyede bir güncelle
+            timerUpdate.Interval = 1000; 
             timerUpdate.Tick += TimerUpdate_Tick;
             timerUpdate.Start();
         }
@@ -114,7 +114,7 @@ namespace Defendo_Blue
             float cpuUsage = 100 - IdleCounter.NextValue();
 
             Series series = chartHardware.Series["CPU Kullanımı"];
-            double currentTime = (DateTime.Now - DateTime.Today).TotalSeconds; // Günün başlangıcından itibaren geçen saniye
+            double currentTime = (DateTime.Now - DateTime.Today).TotalSeconds; 
 
             if (series.Points.Count == 0 || series.Points[series.Points.Count - 1].XValue < currentTime)
             {
@@ -122,11 +122,11 @@ namespace Defendo_Blue
             }
             else
             {
-                // En son noktayı güncelle
+               
                 series.Points[series.Points.Count - 1].YValues[0] = cpuUsage;
             }
 
-            int maxPoints = 10; // Maksimum gösterilecek nokta sayısı
+            int maxPoints = 10; 
             if (series.Points.Count > maxPoints)
             {
                 series.Points.RemoveAt(0);
