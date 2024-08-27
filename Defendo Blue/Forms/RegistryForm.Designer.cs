@@ -33,7 +33,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.localMachineRun = new System.Windows.Forms.Button();
-            this.bttn = new System.Windows.Forms.Button();
+            this.bit32 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -83,18 +83,19 @@
             this.localMachineRun.UseVisualStyleBackColor = false;
             this.localMachineRun.Click += new System.EventHandler(this.button4_Click);
             // 
-            // bttn
+            // bit32
             // 
-            this.bttn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.bttn.FlatAppearance.BorderSize = 0;
-            this.bttn.Font = new System.Drawing.Font("Lucida Bright", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bttn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.bttn.Location = new System.Drawing.Point(871, 36);
-            this.bttn.Name = "bttn";
-            this.bttn.Size = new System.Drawing.Size(283, 67);
-            this.bttn.TabIndex = 6;
-            this.bttn.Text = "32-Bit Programlar için Başlangıç Programlarını Görüntüle";
-            this.bttn.UseVisualStyleBackColor = false;
+            this.bit32.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.bit32.FlatAppearance.BorderSize = 0;
+            this.bit32.Font = new System.Drawing.Font("Lucida Bright", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bit32.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.bit32.Location = new System.Drawing.Point(871, 36);
+            this.bit32.Name = "bit32";
+            this.bit32.Size = new System.Drawing.Size(283, 67);
+            this.bit32.TabIndex = 6;
+            this.bit32.Text = "32-Bit Programlar için Başlangıç Programlarını Görüntüle";
+            this.bit32.UseVisualStyleBackColor = false;
+            this.bit32.Click += new System.EventHandler(this.bit32_Click);
             // 
             // button1
             // 
@@ -129,7 +130,7 @@
             this.ClientSize = new System.Drawing.Size(1193, 546);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.bttn);
+            this.Controls.Add(this.bit32);
             this.Controls.Add(this.localMachineRun);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
@@ -151,7 +152,7 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button localMachineRun;
-        private System.Windows.Forms.Button bttn;
+        private System.Windows.Forms.Button bit32;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
     }

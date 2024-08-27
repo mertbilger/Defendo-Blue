@@ -76,6 +76,12 @@ namespace Defendo_Blue.Forms
             localMachineRunList.Show();
         }
 
+
+        private void bit32_Click(object sender, EventArgs e)
+        {
+            _32LocalMAchineRunList _32localMachineRunList = new _32LocalMAchineRunList();
+            _32localMachineRunList.Show();
+        }
         private void TransparentControl()
         {
             label1.Parent = pictureBox1;

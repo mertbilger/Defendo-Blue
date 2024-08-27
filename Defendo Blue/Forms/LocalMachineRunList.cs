@@ -15,8 +15,6 @@ namespace Defendo_Blue.Forms
             deleteButton.Click += DeleteButton_Click;
             closeButton.Click += CloseButton_Click;
 
-            // `checkedListBox1`'deki işaretleme değiştiğinde öğeleri güncelle
-            checkedListBox1.ItemCheck += CheckedListBox1_ItemCheck;
         }
 
         private void LoadRegistryDataMachine()
@@ -72,13 +70,12 @@ namespace Defendo_Blue.Forms
                     {
                         foreach (var item in checkedListBox1.CheckedItems.OfType<string>().ToList())
                         {
-                            // Parse the item text to get the value name
                             string valueName = item.Split(':')[0].Trim();
                             rk.DeleteValue(valueName, false);
                         }
 
                         MessageBox.Show("Seçili öğeler başarıyla silindi.", "Bilgi");
-                        LoadRegistryDataMachine(); // Refresh the list after deletion
+                        LoadRegistryDataMachine(); 
                     }
                     else
                     {
@@ -98,16 +95,9 @@ namespace Defendo_Blue.Forms
 
         private void CloseButton_Click(object sender, EventArgs e)
         {
-            this.Close(); // Formu kapat
+            this.Close(); 
         }
 
-        private void CheckedListBox1_ItemCheck(object sender, ItemCheckEventArgs e)
-        {
-            // İşaretleme işlemi gerçekleştiğinde öğe seçili olup olmadığını kontrol et
-            if (e.NewValue == CheckState.Checked || e.NewValue == CheckState.Unchecked)
-            {
-                // Kodun burada belirli bir işlem yapmasına gerek olmadığından, `textBox1`'i kaldırdık
-            }
-        }
+  
     }
 }
