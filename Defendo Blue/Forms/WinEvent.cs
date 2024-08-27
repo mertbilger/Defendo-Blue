@@ -24,7 +24,6 @@ namespace Defendo_Blue.Forms
             notifyIcon.Visible = true;
 
             dataTable = new DataTable();
-            dataTable.Columns.Add("InstanceId", typeof(int));
             dataTable.Columns.Add("Message", typeof(string));
 
             dataGridView1.DataSource = dataTable;

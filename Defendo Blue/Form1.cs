@@ -16,14 +16,16 @@ namespace Defendo_Blue
         static readonly PerformanceCounter RamCounter = new PerformanceCounter("Memory", "Available MBytes");
 
         private Timer timerUpdate;
+        private Point? prevPosition = null;
+        private ToolTip tooltip = new ToolTip();
 
         public Form1()
         {
             InitializeComponent();
             Setup();
-            transparentControls();
+            TransparentControls();
             SetupChart();
-            SetupTimer(); 
+            SetupTimer();
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -80,8 +82,6 @@ namespace Defendo_Blue
         {
             chartHardware.Series.Clear();
 
-            chartHardware.Series.Clear();
-
             Series cpuSeries = new Series("CPU Kullanımı");
             cpuSeries.ChartType = SeriesChartType.Spline;
             cpuSeries.BorderWidth = 3;
@@ -92,19 +92,25 @@ namespace Defendo_Blue
             chartHardware.ChartAreas[0].AxisX.LabelStyle.Format = "0";
             chartHardware.ChartAreas[0].AxisX.Interval = 1;
             chartHardware.ChartAreas[0].AxisX.MajorGrid.Enabled = false;
-            chartHardware.ChartAreas[0].AxisX.Minimum = 0; 
-            chartHardware.ChartAreas[0].AxisX.Maximum = 10; 
+            chartHardware.ChartAreas[0].AxisX.Minimum = 0;
+            chartHardware.ChartAreas[0].AxisX.Maximum = 10;
 
             chartHardware.ChartAreas[0].AxisY.Title = "CPU Kullanımı (%)";
             chartHardware.ChartAreas[0].AxisY.LabelStyle.Format = "{0}%";
+
+            chartHardware.Parent = picBack;
+            chartHardware.BackColor = Color.Transparent;
+
+            chartHardware.ChartAreas[0].CursorX.IsUserSelectionEnabled = false;
+            chartHardware.ChartAreas[0].CursorY.IsUserSelectionEnabled = false;
+
+            chartHardware.MouseMove += chart_MouseMove;
         }
-
-
 
         private void SetupTimer()
         {
             timerUpdate = new Timer();
-            timerUpdate.Interval = 1000; 
+            timerUpdate.Interval = 1000;
             timerUpdate.Tick += TimerUpdate_Tick;
             timerUpdate.Start();
         }
@@ -114,31 +120,45 @@ namespace Defendo_Blue
             float cpuUsage = 100 - IdleCounter.NextValue();
 
             Series series = chartHardware.Series["CPU Kullanımı"];
-            double currentTime = (DateTime.Now - DateTime.Today).TotalSeconds; 
+            double currentTime = series.Points.Count;
 
-            if (series.Points.Count == 0 || series.Points[series.Points.Count - 1].XValue < currentTime)
-            {
-                series.Points.AddXY(currentTime, cpuUsage);
-            }
-            else
-            {
-               
-                series.Points[series.Points.Count - 1].YValues[0] = cpuUsage;
-            }
+            series.Points.AddXY(currentTime, cpuUsage);
 
-            int maxPoints = 10; 
+            int maxPoints = 10;
             if (series.Points.Count > maxPoints)
             {
                 series.Points.RemoveAt(0);
+                foreach (var point in series.Points)
+                {
+                    point.XValue -= 1;
+                }
             }
 
-            // X ekseninin maksimum değeri güncelle
-            if (currentTime > chartHardware.ChartAreas[0].AxisX.Maximum)
+            chartHardware.ChartAreas[0].AxisX.Maximum = series.Points.Count;
+            chartHardware.ChartAreas[0].AxisX.Minimum = Math.Max(0, chartHardware.ChartAreas[0].AxisX.Maximum - maxPoints);
+        }
+
+        private void chart_MouseMove(object sender, MouseEventArgs e)
+        {
+            var pos = e.Location;
+            if (prevPosition.HasValue && pos == prevPosition.Value)
+                return;
+
+            tooltip.RemoveAll();
+            prevPosition = pos;
+
+            var results = chartHardware.HitTest(pos.X, pos.Y, false, ChartElementType.DataPoint);
+            foreach (var result in results)
             {
-                chartHardware.ChartAreas[0].AxisX.Maximum = currentTime;
-                chartHardware.ChartAreas[0].AxisX.Minimum = currentTime - 10;
+                if (result.ChartElementType == ChartElementType.DataPoint)
+                {
+                    var point = result.Object as DataPoint;
+                    if (point != null)
+                    {
+                        tooltip.Show($"Değer: {point.YValues[0]}", chartHardware, pos.X, pos.Y - 15);
+                    }
+                }
             }
-
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -185,7 +205,7 @@ namespace Defendo_Blue
             this.Close();
         }
 
-        private void transparentControls()
+        private void TransparentControls()
         {
             picLogo.Parent = picBack;
             picLogo.BackColor = Color.Transparent;
@@ -211,7 +231,7 @@ namespace Defendo_Blue
             float cpuUsage = 100 - IdleCounter.NextValue();
             float ramAvailable = RamCounter.NextValue();
 
-            MessageBox.Show($"CPU Kullanımı: {cpuUsage}%\n",
+            MessageBox.Show($"CPU Kullanımı: {cpuUsage}%\nKalan Bellek: {ramAvailable} MB",
                             "Donanım Bilgileri",
                             MessageBoxButtons.OK,
                             MessageBoxIcon.Information);

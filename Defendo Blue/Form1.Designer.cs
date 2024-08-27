@@ -50,12 +50,12 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.chartHardware = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.TagName = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
             this.picLogo = new System.Windows.Forms.PictureBox();
             this.picBack = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.chartHardware = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -65,10 +65,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chartHardware)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBack)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chartHardware)).BeginInit();
             this.SuspendLayout();
             // 
             // notifyIcon1
@@ -294,6 +294,23 @@
             this.panel3.Size = new System.Drawing.Size(1320, 667);
             this.panel3.TabIndex = 3;
             // 
+            // chartHardware
+            // 
+            chartArea1.Name = "ChartArea1";
+            this.chartHardware.ChartAreas.Add(chartArea1);
+            this.chartHardware.Cursor = System.Windows.Forms.Cursors.Default;
+            legend1.Name = "Legend1";
+            this.chartHardware.Legends.Add(legend1);
+            this.chartHardware.Location = new System.Drawing.Point(1083, 484);
+            this.chartHardware.Name = "chartHardware";
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chartHardware.Series.Add(series1);
+            this.chartHardware.Size = new System.Drawing.Size(377, 183);
+            this.chartHardware.TabIndex = 5;
+            this.chartHardware.Text = "chart1";
+            // 
             // TagName
             // 
             this.TagName.AutoSize = true;
@@ -349,22 +366,6 @@
             this.pictureBox5.TabIndex = 0;
             this.pictureBox5.TabStop = false;
             // 
-            // chartHardware
-            // 
-            chartArea1.Name = "ChartArea1";
-            this.chartHardware.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chartHardware.Legends.Add(legend1);
-            this.chartHardware.Location = new System.Drawing.Point(980, 484);
-            this.chartHardware.Name = "chartHardware";
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.chartHardware.Series.Add(series1);
-            this.chartHardware.Size = new System.Drawing.Size(340, 183);
-            this.chartHardware.TabIndex = 5;
-            this.chartHardware.Text = "chart1";
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 13F);
@@ -374,8 +375,10 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("MS Outlook", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.MaximizeBox = false;
             this.Name = "Form1";
             this.Text = "Defendo Blue";
             this.panel1.ResumeLayout(false);
@@ -390,10 +393,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chartHardware)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBack)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chartHardware)).EndInit();
             this.ResumeLayout(false);
 
         }
