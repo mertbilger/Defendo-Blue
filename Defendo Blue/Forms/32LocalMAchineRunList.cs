@@ -50,14 +50,11 @@ namespace Defendo_Blue.Forms
                 {
                     foreach (var item in checkedListBox1.CheckedItems)
                     {
-                        // Extract the key name from the item string
                         string keyName = item.ToString().Split(':')[0].Trim();
 
-                        // Delete the registry key
                         rk.DeleteValue(keyName, throwOnMissingValue: false);
                     }
 
-                    // Reload the registry data to reflect changes
                     LoadRegistryData();
                 }
                 else
