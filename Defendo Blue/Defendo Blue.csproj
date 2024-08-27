@@ -127,6 +127,12 @@
     <Compile Include="Forms\FastScan.Designer.cs">
       <DependentUpon>FastScan.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\LocalMachineRunList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\LocalMachineRunList.Designer.cs">
+      <DependentUpon>LocalMachineRunList.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\RegistryForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -164,6 +170,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FastScan.resx">
       <DependentUpon>FastScan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\LocalMachineRunList.resx">
+      <DependentUpon>LocalMachineRunList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\RegistryForm.resx">
       <DependentUpon>RegistryForm.cs</DependentUpon>
@@ -295,6 +304,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\2890572_ai_artificial intelligence_brain_electronics_notebook_icon %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\8664938_trash_can_delete_remove_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\326518_arrow_back_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3994376_arrow_back_left_navigation_previous_icon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

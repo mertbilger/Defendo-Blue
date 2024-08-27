@@ -121,8 +121,8 @@
   <data name="3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="2205195_mobile_phone_screen_smart_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\2205195_mobile_phone_screen_smart_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="5173017_antivirus_internet_protect_safe_security_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\5173017_antivirus_internet_protect_safe_security_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="2537363_protection_safety_security_shield_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\2537363_protection_safety_security_shield_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -154,11 +154,14 @@
   <data name="334647_google_play_app_digital_distribution_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\334647_google_play_app_digital_distribution_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="8664938_trash_can_delete_remove_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\8664938_trash_can_delete_remove_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="1034363_advantage_protection_protect_security_shield_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\1034363_advantage_protection_protect_security_shield_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="5173017_antivirus_internet_protect_safe_security_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\5173017_antivirus_internet_protect_safe_security_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="2890572_ai_artificial intelligence_brain_electronics_notebook_icon (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\2890572_ai_artificial intelligence_brain_electronics_notebook_icon (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="2205195_mobile_phone_screen_smart_icon (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\2205195_mobile_phone_screen_smart_icon (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -180,6 +183,9 @@
   </data>
   <data name="data_1575959" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\data_1575959.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="2205195_mobile_phone_screen_smart_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\2205195_mobile_phone_screen_smart_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="9071330_personal_privacy_security_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\9071330_personal_privacy_security_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -220,13 +226,16 @@
   <data name="DefendoBlue" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\DefendoBlue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="326518_arrow_back_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\326518_arrow_back_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="199213_log_file_extension_format_icon (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\199213_log_file_extension_format_icon (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="bg" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\bg.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="2890572_ai_artificial intelligence_brain_electronics_notebook_icon (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\2890572_ai_artificial intelligence_brain_electronics_notebook_icon (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="3994376_arrow_back_left_navigation_previous_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\3994376_arrow_back_left_navigation_previous_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

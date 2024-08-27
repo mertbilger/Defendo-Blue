@@ -183,9 +183,29 @@ namespace Defendo_Blue.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
         /// </summary>
+        internal static System.Drawing.Bitmap _326518_arrow_back_icon {
+            get {
+                object obj = ResourceManager.GetObject("326518_arrow_back_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
         internal static System.Drawing.Bitmap _334647_google_play_app_digital_distribution_icon {
             get {
                 object obj = ResourceManager.GetObject("334647_google_play_app_digital_distribution_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
+        internal static System.Drawing.Bitmap _3994376_arrow_back_left_navigation_previous_icon {
+            get {
+                object obj = ResourceManager.GetObject("3994376_arrow_back_left_navigation_previous_icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -276,6 +296,16 @@ namespace Defendo_Blue.Properties {
         internal static System.Drawing.Bitmap _52641_registry_icon {
             get {
                 object obj = ResourceManager.GetObject("52641_registry_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
+        internal static System.Drawing.Bitmap _8664938_trash_can_delete_remove_icon {
+            get {
+                object obj = ResourceManager.GetObject("8664938_trash_can_delete_remove_icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

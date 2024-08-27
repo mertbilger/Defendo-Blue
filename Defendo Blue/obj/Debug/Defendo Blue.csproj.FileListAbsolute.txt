@@ -70,3 +70,4 @@ C:\Users\Mert\source\repos\mertbilger\Defendo-Blue\Defendo Blue\bin\Debug\Hardwa
 C:\Users\Mert\source\repos\mertbilger\Defendo-Blue\Defendo Blue\bin\Debug\System.CodeDom.dll
 C:\Users\Mert\source\repos\mertbilger\Defendo-Blue\Defendo Blue\bin\Debug\Hardware.Info.xml
 C:\Users\Mert\source\repos\mertbilger\Defendo-Blue\Defendo Blue\bin\Debug\System.CodeDom.xml
+C:\Users\Mert\source\repos\mertbilger\Defendo-Blue\Defendo Blue\obj\Debug\Defendo_Blue.Forms.LocalMachineRunList.resources

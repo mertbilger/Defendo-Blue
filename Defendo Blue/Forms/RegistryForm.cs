@@ -2,6 +2,7 @@
 using System.Data;
 using System.Drawing;
 using System.IO;
+using System.Security.AccessControl;
 using System.Windows.Forms;
 using Microsoft.Win32;
 
@@ -67,11 +68,19 @@ namespace Defendo_Blue.Forms
             }
         }
 
+       
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            LocalMachineRunList localMachineRunList = new LocalMachineRunList();
+            localMachineRunList.Show();
+        }
+
         private void TransparentControl()
         {
             label1.Parent = pictureBox1;
             label1.BackColor = Color.Transparent;
         }
-
     }
 }
+
