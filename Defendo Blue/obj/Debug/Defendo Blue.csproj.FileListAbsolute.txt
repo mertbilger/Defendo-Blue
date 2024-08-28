@@ -72,3 +72,5 @@ C:\Users\Mert\source\repos\mertbilger\Defendo-Blue\Defendo Blue\bin\Debug\Hardwa
 C:\Users\Mert\source\repos\mertbilger\Defendo-Blue\Defendo Blue\bin\Debug\System.CodeDom.xml
 C:\Users\Mert\source\repos\mertbilger\Defendo-Blue\Defendo Blue\obj\Debug\Defendo_Blue.Forms.LocalMachineRunList.resources
 C:\Users\Mert\source\repos\mertbilger\Defendo-Blue\Defendo Blue\obj\Debug\Defendo_Blue.Forms._32LocalMAchineRunList.resources
+C:\Users\Mert\source\repos\mertbilger\Defendo-Blue\Defendo Blue\obj\Debug\Defendo_Blue.Forms.AllUserRun.resources
+C:\Users\Mert\source\repos\mertbilger\Defendo-Blue\Defendo Blue\obj\Debug\Defendo_Blue.Forms.ValidUserRun.resources

@@ -26,6 +26,7 @@ namespace Defendo_Blue
             TransparentControls();
             SetupChart();
             SetupTimer();
+            this.Load += Form1_Load;
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -117,7 +118,7 @@ namespace Defendo_Blue
 
         private void TimerUpdate_Tick(object sender, EventArgs e)
         {
-            float cpuUsage = 100 - IdleCounter.NextValue();
+            float cpuUsage =99 - IdleCounter.NextValue();
 
             Series series = chartHardware.Series["CPU Kullanımı"];
             double currentTime = series.Points.Count;
@@ -232,12 +233,12 @@ namespace Defendo_Blue
             float ramAvailable = RamCounter.NextValue();
 
             MessageBox.Show($"CPU Kullanımı: {cpuUsage}%\nKalan Bellek: {ramAvailable} MB",
-                            "Donanım Bilgileri",
+                            "CPU Bilgisi",
                             MessageBoxButtons.OK,
                             MessageBoxIcon.Information);
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void chartHardware_Click(object sender, EventArgs e)
         {
             ShowHardwareInfo();
         }

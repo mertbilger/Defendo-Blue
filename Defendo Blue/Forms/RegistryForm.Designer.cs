@@ -34,8 +34,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.localMachineRun = new System.Windows.Forms.Button();
             this.bit32 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.AllUSer = new System.Windows.Forms.Button();
+            this.ValidUser = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -97,39 +97,41 @@
             this.bit32.UseVisualStyleBackColor = false;
             this.bit32.Click += new System.EventHandler(this.bit32_Click);
             // 
-            // button1
+            // AllUSer
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.Font = new System.Drawing.Font("Lucida Bright", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button1.Location = new System.Drawing.Point(38, 233);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(283, 67);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "Tüm Kullanıcılar İçin Başlangıç Programlarını Görüntüle";
-            this.button1.UseVisualStyleBackColor = false;
+            this.AllUSer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.AllUSer.FlatAppearance.BorderSize = 0;
+            this.AllUSer.Font = new System.Drawing.Font("Lucida Bright", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AllUSer.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.AllUSer.Location = new System.Drawing.Point(38, 233);
+            this.AllUSer.Name = "AllUSer";
+            this.AllUSer.Size = new System.Drawing.Size(283, 67);
+            this.AllUSer.TabIndex = 7;
+            this.AllUSer.Text = "Tüm Kullanıcılar İçin Başlangıç Programlarını Görüntüle";
+            this.AllUSer.UseVisualStyleBackColor = false;
+            this.AllUSer.Click += new System.EventHandler(this.AllUSer_Click);
             // 
-            // button2
+            // ValidUser
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.Font = new System.Drawing.Font("Lucida Bright", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button2.Location = new System.Drawing.Point(871, 233);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(283, 67);
-            this.button2.TabIndex = 8;
-            this.button2.Text = "Mevcut Kullanıcı İçin Başlangıç Programlarını Görüntüle";
-            this.button2.UseVisualStyleBackColor = false;
+            this.ValidUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.ValidUser.FlatAppearance.BorderSize = 0;
+            this.ValidUser.Font = new System.Drawing.Font("Lucida Bright", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ValidUser.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.ValidUser.Location = new System.Drawing.Point(871, 233);
+            this.ValidUser.Name = "ValidUser";
+            this.ValidUser.Size = new System.Drawing.Size(283, 67);
+            this.ValidUser.TabIndex = 8;
+            this.ValidUser.Text = "Mevcut Kullanıcı İçin Başlangıç Programlarını Görüntüle";
+            this.ValidUser.UseVisualStyleBackColor = false;
+            this.ValidUser.Click += new System.EventHandler(this.ValidUser_Click);
             // 
             // RegistryForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1193, 546);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.ValidUser);
+            this.Controls.Add(this.AllUSer);
             this.Controls.Add(this.bit32);
             this.Controls.Add(this.localMachineRun);
             this.Controls.Add(this.label1);
@@ -153,7 +155,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button localMachineRun;
         private System.Windows.Forms.Button bit32;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button AllUSer;
+        private System.Windows.Forms.Button ValidUser;
     }
 }

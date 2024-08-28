@@ -85,7 +85,7 @@
             this.Controls.Add(this.deleteButton);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.checkedListBox1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "LocalMachineRunList";

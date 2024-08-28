@@ -1,6 +1,11 @@
 ﻿using DocumentFormat.OpenXml.Packaging;
 using System;
+using System.Collections.Generic;
+using System.Drawing;
+using System.IO;
+using System.Text;
 using System.Windows.Forms;
+
 
 namespace Defendo_Blue.Forms
 {
@@ -9,8 +14,9 @@ namespace Defendo_Blue.Forms
         public FastScan()
         {
             InitializeComponent();
+            transparentControls();
         }
-
+  
         private bool CheckForMacros(string filePath)
         {
             try
@@ -61,7 +67,7 @@ namespace Defendo_Blue.Forms
             }
         }
 
-        private void btnTespit_Click(object sender, EventArgs e)
+        private void addFile_Click(object sender, EventArgs e)
         {
             using (OpenFileDialog openFileDialog = new OpenFileDialog())
             {
@@ -82,6 +88,15 @@ namespace Defendo_Blue.Forms
                     }
                 }
             }
+
+        }
+        private void transparentControls()
+        {
+            addFile.Parent = pictureBox1;
+            addFile.BackColor = Color.Transparent;
+
+            content1.Parent = pictureBox1;
+            content1.BackColor = Color.Transparent;
         }
     }
 }

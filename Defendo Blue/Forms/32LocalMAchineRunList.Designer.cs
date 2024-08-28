@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(_32LocalMAchineRunList));
             this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.closeButton = new System.Windows.Forms.Button();
@@ -85,6 +86,9 @@
             this.Controls.Add(this.closeButton);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.checkedListBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "_32LocalMAchineRunList";
             this.Text = "_32LocalMAchineRunList";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

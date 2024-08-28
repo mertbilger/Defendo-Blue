@@ -310,6 +310,7 @@
             this.chartHardware.Size = new System.Drawing.Size(377, 183);
             this.chartHardware.TabIndex = 5;
             this.chartHardware.Text = "chart1";
+            this.chartHardware.Click += new System.EventHandler(this.chartHardware_Click);
             // 
             // TagName
             // 
@@ -334,7 +335,6 @@
             this.button4.TabIndex = 3;
             this.button4.Text = "Run Smart Scan";
             this.button4.UseVisualStyleBackColor = false;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // picLogo
             // 
@@ -375,7 +375,6 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("MS Outlook", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.MaximizeBox = false;

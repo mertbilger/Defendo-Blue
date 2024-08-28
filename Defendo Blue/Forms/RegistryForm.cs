@@ -68,8 +68,6 @@ namespace Defendo_Blue.Forms
             }
         }
 
-       
-
         private void button4_Click(object sender, EventArgs e)
         {
             LocalMachineRunList localMachineRunList = new LocalMachineRunList();
@@ -87,6 +85,19 @@ namespace Defendo_Blue.Forms
             label1.Parent = pictureBox1;
             label1.BackColor = Color.Transparent;
         }
+
+        private void AllUSer_Click(object sender, EventArgs e)
+        {
+            AllUserRun allUserRun= new AllUserRun();
+            allUserRun.Show();
+        }
+
+        private void ValidUser_Click(object sender, EventArgs e)
+        {
+            ValidUserRun validUserRun = new ValidUserRun();
+            validUserRun.Show();
+        }
     }
-}
+    }
+
 

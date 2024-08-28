@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DocumentFormat.OpenXml.Vml.Office;
+using System;
 using System.Data;
 using System.Diagnostics;
 using System.Drawing;
@@ -32,14 +33,19 @@ namespace Defendo_Blue.Forms
             eventLog = new EventLog(watchLog);
             eventLog.EntryWritten += new EntryWrittenEventHandler(OnEntryWritten);
             eventLog.EnableRaisingEvents = true;
+
+            this.FormClosing += new FormClosingEventHandler(WinEvent_FormClosing);
         }
 
         private void OnEntryWritten(object source, EntryWrittenEventArgs e)
         {
             if (e.Entry.InstanceId == 4624)
             {
-                UpdateLogEntries();
-                ShowNotification(e.Entry);
+                this.Invoke(new Action(() =>
+                {
+                    UpdateLogEntries();
+                    ShowNotification(e.Entry);
+                }));
             }
         }
 
@@ -49,40 +55,25 @@ namespace Defendo_Blue.Forms
             {
                 dataTable.Clear();
 
-
                 EventLog log = new EventLog(watchLog);
 
                 foreach (EventLogEntry entry in log.Entries)
                 {
                     if (entry.InstanceId == 4624)
                     {
-
-                        string userName = "Bilinmeyen Kullanıcı";
-                        string ipAddress = "Bilinmiyor";
-
-                        if (entry.ReplacementStrings.Length > 5)
-                        {
-                            userName = entry.ReplacementStrings[5];
-                        }
-
-                        if (entry.ReplacementStrings.Length > 18)
-                        {
-                            ipAddress = entry.ReplacementStrings[18];
-                        }
-
-                        dataTable.Rows.Add(entry.InstanceId, entry.Message);
+                        dataTable.Rows.Add(entry.Message);
                     }
                 }
 
                 log.Close();
             }
-            catch (SecurityException ex)
+            catch (SecurityException)
             {
-                MessageBox.Show("Access to the event log was denied. Please check your permissions.", "Permission Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Event loguna erişim reddedildi. Lütfen izinlerinizi kontrol edin.", "İzin Hatası", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             catch (Exception ex)
             {
-                MessageBox.Show("An error occurred while reading the event log: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Event log okunurken bir hata oluştu: " + ex.Message, "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -116,7 +107,6 @@ namespace Defendo_Blue.Forms
             if (e.RowIndex >= 0)
             {
                 DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
-                int instanceId = Convert.ToInt32(row.Cells["InstanceId"].Value);
                 string message = row.Cells["Message"].Value.ToString();
 
                 string userName = "Bilinmeyen Kullanıcı";
@@ -125,7 +115,8 @@ namespace Defendo_Blue.Forms
 
                 foreach (EventLogEntry entry in new EventLog(watchLog).Entries)
                 {
-                    if (entry.InstanceId == instanceId)
+                    // Message üzerinden olay kaydını arar
+                    if (entry.Message == message)
                     {
                         if (entry.ReplacementStrings.Length > 5)
                         {
@@ -146,12 +137,12 @@ namespace Defendo_Blue.Forms
                                  $"Kullanıcı: {userName}\n" +
                                  $"IP Adresi: {ipAddress}\n";
 
-
                 MessageBox.Show(details, "Event Log Detail", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
-        private void button4_Click_1(object sender, EventArgs e)
+
+        private void button4_Click(object sender, EventArgs e)
         {
             UpdateLogEntries();
         }
@@ -163,6 +154,12 @@ namespace Defendo_Blue.Forms
 
             pictureBox2.Parent = pictureBox1;
             pictureBox2.BackColor = Color.Transparent;
+        }
+
+        private void WinEvent_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            eventLog.EnableRaisingEvents = false;
+            eventLog.Dispose();
         }
     }
 }
