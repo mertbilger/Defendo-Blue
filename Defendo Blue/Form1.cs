@@ -4,9 +4,6 @@ using System.Windows.Forms;
 using System.Diagnostics;
 using System.Windows.Forms.DataVisualization.Charting;
 using Defendo_Blue.Forms;
-using ManagedCuda.BasicTypes;
-using System.IO;
-using System.Text;
 using System.Net.Sockets;
 using System.Net;
 

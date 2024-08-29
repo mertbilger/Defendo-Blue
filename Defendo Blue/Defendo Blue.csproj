@@ -54,9 +54,6 @@
     <Reference Include="Hardware.Info, Version=100.1.0.1, Culture=neutral, PublicKeyToken=3130d442e696f124, processorArchitecture=MSIL">
       <HintPath>..\packages\Hardware.Info.100.1.0.1\lib\netstandard2.0\Hardware.Info.dll</HintPath>
     </Reference>
-    <Reference Include="ManagedCuda, Version=10.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\ManagedCuda.10.0.0\lib\netstandard2.0\ManagedCuda.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Office.Interop.Excel.15.0.4795.1001\lib\net20\Microsoft.Office.Interop.Excel.dll</HintPath>
       <EmbedInteropTypes>True</EmbedInteropTypes>
