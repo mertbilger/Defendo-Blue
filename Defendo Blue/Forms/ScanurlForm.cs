@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text;
 using System.Windows.Forms;
 using VirusTotalNet;
 using VirusTotalNet.Objects;
@@ -15,10 +16,46 @@ namespace Defendo_Blue.Forms
         public ScanUrlForm()
         {
             InitializeComponent();
-            this.CheckUrl.Click += new EventHandler(CheckUrlButton_Click);
+            this.CheckUrl.Click += new EventHandler(CheckUrl_Click);
         }
 
-        private async void CheckUrlButton_Click(object sender, EventArgs e)
+        private void PrintScan(UrlReport urlReport)
+        {
+            StringBuilder resultMessage = new StringBuilder();
+            resultMessage.AppendLine("Tarama Sonuçları\n");
+            resultMessage.AppendLine($"Scan ID: {urlReport.ScanId}");
+            resultMessage.AppendLine($"Mesaj: {urlReport.VerboseMsg}\n");
+            resultMessage.AppendLine(string.Format("{0,-30} {1}", "Antivirüs Motoru", "Durum"));
+            resultMessage.AppendLine(new string('-', 50));
+
+            if (urlReport.ResponseCode == UrlReportResponseCode.Present)
+            {
+                foreach (KeyValuePair<string, UrlScanEngine> scan in urlReport.Scans)
+                {
+                    string detectionStatus = scan.Value.Detected ? "Tespit Edildi" : "Tespit Edilmedi";
+                    resultMessage.AppendLine(string.Format("{0,-30} {1}", scan.Key, detectionStatus));
+                }
+            }
+
+            ScanResultForm resultForm = new ScanResultForm(resultMessage.ToString());
+            resultForm.ShowDialog();
+        }
+
+        private void PrintScan(UrlScanResult urlResult)
+        {
+            StringBuilder resultMessage = new StringBuilder();
+            resultMessage.AppendLine("Tarama Sonuçları\n");
+            resultMessage.AppendLine($"Scan ID: {urlResult.ScanId}");
+            resultMessage.AppendLine($"Mesaj: {urlResult.VerboseMsg}\n");
+
+            resultMessage.AppendLine("Taranan URL bilgisi başarıyla alındı. Detaylar aşağıda:");
+
+            ScanResultForm resultForm = new ScanResultForm(resultMessage.ToString());
+            resultForm.ShowDialog();
+        }
+
+
+        private async void CheckUrl_Click(object sender, EventArgs e)
         {
             string urlToScan = textBox1.Text;
 
@@ -43,36 +80,13 @@ namespace Defendo_Blue.Forms
             {
                 MessageBox.Show("URL daha önce taranmamış, şimdi taranıyor...", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 UrlScanResult urlResult = await oVirusTotal.ScanUrlAsync(urlToScan);
+
+                string debugInfo = $"ScanId: {urlResult.ScanId}, VerboseMsg: {urlResult.VerboseMsg}";
+                MessageBox.Show(debugInfo, "Debug Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
                 PrintScan(urlResult);
             }
         }
 
-        private void PrintScan(UrlReport urlReport)
-        {
-            string resultMessage = "Tarama Sonuçları:\n\n";
-
-            resultMessage += $"Scan ID: {urlReport.ScanId}\n";
-            resultMessage += $"Message: {urlReport.VerboseMsg}\n\n";
-
-            if (urlReport.ResponseCode == UrlReportResponseCode.Present)
-            {
-                foreach (KeyValuePair<string, UrlScanEngine> scan in urlReport.Scans)
-                {
-                    resultMessage += $"{scan.Key,-25} Detected: {scan.Value.Detected}\n";
-                }
-            }
-
-            MessageBox.Show(resultMessage, "Tarama Sonuçları", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        }
-
-        private void PrintScan(UrlScanResult urlResult)
-        {
-            string resultMessage = "Tarama Sonuçları:\n\n";
-
-            resultMessage += $"Scan ID: {urlResult.ScanId}\n";
-            resultMessage += $"Message: {urlResult.VerboseMsg}\n";
-
-            MessageBox.Show(resultMessage, "Tarama Sonuçları", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        }
     }
 }

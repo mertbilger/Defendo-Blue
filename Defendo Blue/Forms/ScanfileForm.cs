@@ -58,7 +58,7 @@ namespace Defendo_Blue.Forms
                     MessageBox.Show("Dosya daha önce taranmamış, şimdi taranıyor...", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     ScanResult scanResult = await virusTotal.ScanFileAsync(fileBytes, Path.GetFileName(filePath));
-                    MessageBox.Show("Tarama kuyruğa alındı.", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Tarama kuyruğa alındı, 10 dakika sonra sonuç için tekrar deneyin...", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
         }

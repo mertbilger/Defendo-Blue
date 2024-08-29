@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Data;
 using System.Drawing;
-using System.IO;
-using System.Security.AccessControl;
+using System.Linq;
 using System.Windows.Forms;
 using Microsoft.Win32;
 
@@ -10,28 +8,18 @@ namespace Defendo_Blue.Forms
 {
     public partial class RegistryForm : Form
     {
-        private DataTable dataTable;
-        
         public RegistryForm()
         {
             InitializeComponent();
-            InitializeDataGridView();
+            InitializeCheckedListBox();
             LoadRegistryData();
             TransparentControl();
         }
-   
-        private void InitializeDataGridView()
+
+        private void InitializeCheckedListBox()
         {
-
-            dataTable = new DataTable();
-            dataTable.Columns.Add("Anahtar Adı", typeof(string));
-            dataTable.Columns.Add("Değer", typeof(string));
-
-            dataGridView1.DataSource = dataTable;
-
-            this.Controls.Add(dataGridView1);
-
-            dataGridView1.CellClick += new DataGridViewCellEventHandler(dataGridView1_CellClick);
+     
+            this.Controls.Add(checkedListBox1);
         }
 
         private void LoadRegistryData()
@@ -42,13 +30,12 @@ namespace Defendo_Blue.Forms
             {
                 if (rk != null)
                 {
-                    dataTable.Clear();
+                    checkedListBox1.Items.Clear();
 
                     foreach (string valueName in rk.GetValueNames())
                     {
                         object value = rk.GetValue(valueName);
-                        
-                        dataTable.Rows.Add(valueName, value);
+                        checkedListBox1.Items.Add($"{valueName}: {value}");
                     }
                 }
                 else
@@ -58,14 +45,9 @@ namespace Defendo_Blue.Forms
             }
         }
 
-        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void checkedListBox1_ItemCheck(object sender, ItemCheckEventArgs e)
         {
-            if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
-            {
-                string keyName = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
-                string value = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
-
-            }
+            string item = checkedListBox1.Items[e.Index].ToString();
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -74,12 +56,12 @@ namespace Defendo_Blue.Forms
             localMachineRunList.Show();
         }
 
-
         private void bit32_Click(object sender, EventArgs e)
         {
             _32LocalMAchineRunList _32localMachineRunList = new _32LocalMAchineRunList();
             _32localMachineRunList.Show();
         }
+
         private void TransparentControl()
         {
             label1.Parent = pictureBox1;
@@ -88,7 +70,7 @@ namespace Defendo_Blue.Forms
 
         private void AllUSer_Click(object sender, EventArgs e)
         {
-            AllUserRun allUserRun= new AllUserRun();
+            AllUserRun allUserRun = new AllUserRun();
             allUserRun.Show();
         }
 
@@ -97,7 +79,47 @@ namespace Defendo_Blue.Forms
             ValidUserRun validUserRun = new ValidUserRun();
             validUserRun.Show();
         }
-    }
-    }
 
+        private void deleteButton_Click(object sender, EventArgs e)
+        {
+            if (checkedListBox1.CheckedItems.Count == 0)
+            {
+                MessageBox.Show("Silmek için en az bir öğe seçmelisiniz.", "Uyarı");
+                return;
+            }
 
+            string subKeyPath = @"SOFTWARE\Microsoft\Windows\CurrentVersion\Run";
+
+            try
+            {
+                using (RegistryKey baseKey = RegistryKey.OpenBaseKey(RegistryHive.CurrentUser, RegistryView.Registry64))
+                using (RegistryKey rk = baseKey.OpenSubKey(subKeyPath, true))
+                {
+                    if (rk != null)
+                    {
+                        foreach (var item in checkedListBox1.CheckedItems.OfType<string>().ToList())
+                        {
+                            string valueName = item.Split(':')[0].Trim();
+                            rk.DeleteValue(valueName, false);
+                        }
+
+                        MessageBox.Show("Seçili öğeler başarıyla silindi.", "Bilgi");
+                        LoadRegistryData(); 
+                    }
+                    else
+                    {
+                        MessageBox.Show("Alt anahtar bulunamadı.", "Hata");
+                    }
+                }
+            }
+            catch (UnauthorizedAccessException ex)
+            {
+                MessageBox.Show("Erişim hatası: " + ex.Message, "Hata");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Beklenmeyen bir hata oluştu: " + ex.Message, "Hata");
+            }
+        }
+    }
+}

@@ -62,7 +62,9 @@
             this.ClientSize = new System.Drawing.Size(844, 527);
             this.Controls.Add(this.resultTextBox);
             this.Controls.Add(this.pictureBox);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "ScanResultForm";
             this.Text = "ScanResultForm";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();

@@ -64,7 +64,6 @@ C:\Users\Mert\source\repos\mertbilger\Defendo-Blue\Defendo Blue\bin\Debug\Aspose
 C:\Users\Mert\source\repos\mertbilger\Defendo-Blue\Defendo Blue\bin\Debug\Aspose.Slides.xml
 C:\Users\Mert\source\repos\mertbilger\Defendo-Blue\Defendo Blue\bin\Debug\System.Diagnostics.PerformanceCounter.dll
 C:\Users\Mert\source\repos\mertbilger\Defendo-Blue\Defendo Blue\bin\Debug\System.Diagnostics.PerformanceCounter.xml
-C:\Users\Mert\source\repos\mertbilger\Defendo-Blue\Defendo Blue\bin\Debug\System.Drawing.Common.dll
 C:\Users\Mert\source\repos\mertbilger\Defendo-Blue\Defendo Blue\bin\Debug\Hardware.Info.dll
 C:\Users\Mert\source\repos\mertbilger\Defendo-Blue\Defendo Blue\bin\Debug\System.CodeDom.dll
 C:\Users\Mert\source\repos\mertbilger\Defendo-Blue\Defendo Blue\bin\Debug\Hardware.Info.xml

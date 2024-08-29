@@ -119,9 +119,10 @@
             this.Controls.Add(this.content1);
             this.Controls.Add(this.addFile);
             this.Controls.Add(this.bgFileBack);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ScanfileForm";
-            this.Text = "ScanfileForm";
+            this.Text = "Dosya Tara";
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.addFile)).EndInit();

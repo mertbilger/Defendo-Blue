@@ -121,6 +121,57 @@
             </summary>
             <returns>Each property on a new line</returns>
         </member>
+        <member name="T:Hardware.Info.ComputerSystem">
+            <summary>
+            WMI class: Win32_ComputerSystemProduct
+            </summary>
+        </member>
+        <member name="P:Hardware.Info.ComputerSystem.Caption">
+            <summary>
+            Short textual description for the product.
+            </summary>
+        </member>
+        <member name="P:Hardware.Info.ComputerSystem.Description">
+            <summary>
+            Textual description of the product.
+            </summary>
+        </member>
+        <member name="P:Hardware.Info.ComputerSystem.IdentifyingNumber">
+            <summary>
+            Product identification, such as a serial number on software, a die number on a hardware chip, or (for noncommercial products) a project number.
+            </summary>
+        </member>
+        <member name="P:Hardware.Info.ComputerSystem.Name">
+            <summary>
+            Commonly used product name.
+            </summary>
+        </member>
+        <member name="P:Hardware.Info.ComputerSystem.SKUNumber">
+            <summary>
+            Product's stock-keeping unit (SKU) information.
+            </summary>
+        </member>
+        <member name="P:Hardware.Info.ComputerSystem.UUID">
+            <summary>
+            Universally unique identifier (UUID) for this product. A UUID is a 128-bit identifier that is guaranteed to be different from other generated UUIDs. If a UUID is not available, a UUID of all zeros is used.
+            </summary>
+        </member>
+        <member name="P:Hardware.Info.ComputerSystem.Vendor">
+            <summary>
+            Name of the product's supplier, or the entity selling the product (the manufacturer, reseller, OEM, and so on).
+            </summary>
+        </member>
+        <member name="P:Hardware.Info.ComputerSystem.Version">
+            <summary>
+            Product version information.
+            </summary>
+        </member>
+        <member name="M:Hardware.Info.ComputerSystem.ToString">
+            <summary>
+            Write all property values to a string
+            </summary>
+            <returns>Each property on a new line</returns>
+        </member>
         <member name="T:Hardware.Info.CPU">
             <summary>
             WMI class: Win32_Processor
@@ -1191,6 +1242,11 @@
             List of <see cref="T:Hardware.Info.BIOS" />
             </summary>
         </member>
+        <member name="P:Hardware.Info.HardwareInfo.ComputerSystemList">
+            <summary>
+            List of <see cref="T:Hardware.Info.ComputerSystem" />
+            </summary>
+        </member>
         <member name="P:Hardware.Info.HardwareInfo.CpuList">
             <summary>
             List of <see cref="T:Hardware.Info.CPU" />
@@ -1276,6 +1332,11 @@
         <member name="M:Hardware.Info.HardwareInfo.RefreshBIOSList">
             <summary>
             Refresh BIOS info
+            </summary>
+        </member>
+        <member name="M:Hardware.Info.HardwareInfo.RefreshComputerSystemList">
+            <summary>
+            Refresh computer system info
             </summary>
         </member>
         <member name="M:Hardware.Info.HardwareInfo.RefreshCPUList(System.Boolean)">
@@ -1396,6 +1457,11 @@
             List of <see cref="T:Hardware.Info.BIOS" />
             </summary>
         </member>
+        <member name="P:Hardware.Info.IHardwareInfo.ComputerSystemList">
+            <summary>
+            List of <see cref="T:Hardware.Info.ComputerSystem" />
+            </summary>
+        </member>
         <member name="P:Hardware.Info.IHardwareInfo.CpuList">
             <summary>
             List of <see cref="T:Hardware.Info.CPU" />
@@ -1474,6 +1540,11 @@
         <member name="M:Hardware.Info.IHardwareInfo.RefreshBIOSList">
             <summary>
             Refresh BIOS info
+            </summary>
+        </member>
+        <member name="M:Hardware.Info.IHardwareInfo.RefreshComputerSystemList">
+            <summary>
+            Refresh computer system info
             </summary>
         </member>
         <member name="M:Hardware.Info.IHardwareInfo.RefreshCPUList(System.Boolean)">

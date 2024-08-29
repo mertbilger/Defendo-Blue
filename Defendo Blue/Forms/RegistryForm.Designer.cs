@@ -29,32 +29,23 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegistryForm));
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.localMachineRun = new System.Windows.Forms.Button();
             this.bit32 = new System.Windows.Forms.Button();
             this.AllUSer = new System.Windows.Forms.Button();
             this.ValidUser = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
+            this.deleteButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(-2, 282);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(1199, 283);
-            this.dataGridView1.TabIndex = 1;
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Defendo_Blue.Properties.Resources.bg;
             this.pictureBox1.Location = new System.Drawing.Point(-2, -5);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1199, 326);
+            this.pictureBox1.Size = new System.Drawing.Size(1199, 336);
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
             // 
@@ -125,24 +116,45 @@
             this.ValidUser.UseVisualStyleBackColor = false;
             this.ValidUser.Click += new System.EventHandler(this.ValidUser_Click);
             // 
+            // checkedListBox1
+            // 
+            this.checkedListBox1.FormattingEnabled = true;
+            this.checkedListBox1.Location = new System.Drawing.Point(-2, 328);
+            this.checkedListBox1.Name = "checkedListBox1";
+            this.checkedListBox1.Size = new System.Drawing.Size(1199, 214);
+            this.checkedListBox1.TabIndex = 9;
+            // 
+            // deleteButton
+            // 
+            this.deleteButton.BackColor = System.Drawing.Color.Transparent;
+            this.deleteButton.BackgroundImage = global::Defendo_Blue.Properties.Resources._8664938_trash_can_delete_remove_icon;
+            this.deleteButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.deleteButton.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.deleteButton.Location = new System.Drawing.Point(1149, 503);
+            this.deleteButton.Name = "deleteButton";
+            this.deleteButton.Size = new System.Drawing.Size(32, 31);
+            this.deleteButton.TabIndex = 10;
+            this.deleteButton.UseVisualStyleBackColor = false;
+            this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click);
+            // 
             // RegistryForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1193, 546);
+            this.Controls.Add(this.deleteButton);
+            this.Controls.Add(this.checkedListBox1);
             this.Controls.Add(this.ValidUser);
             this.Controls.Add(this.AllUSer);
             this.Controls.Add(this.bit32);
             this.Controls.Add(this.localMachineRun);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.dataGridView1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "RegistryForm";
             this.Text = "Registry";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -150,12 +162,13 @@
         }
 
         #endregion
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button localMachineRun;
         private System.Windows.Forms.Button bit32;
         private System.Windows.Forms.Button AllUSer;
         private System.Windows.Forms.Button ValidUser;
+        private System.Windows.Forms.CheckedListBox checkedListBox1;
+        private System.Windows.Forms.Button deleteButton;
     }
 }
