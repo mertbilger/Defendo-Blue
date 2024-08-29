@@ -35,6 +35,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
@@ -52,7 +53,6 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.chartHardware = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.TagName = new System.Windows.Forms.Label();
-            this.button4 = new System.Windows.Forms.Button();
             this.picLogo = new System.Windows.Forms.PictureBox();
             this.picBack = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
@@ -79,6 +79,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(44)))), ((int)(((byte)(65)))));
+            this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.pictureBox4);
             this.panel1.Controls.Add(this.pictureBox3);
@@ -90,6 +91,17 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1516, 50);
             this.panel1.TabIndex = 1;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Lucida Bright", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label3.Location = new System.Drawing.Point(1110, 17);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(44, 15);
+            this.label3.TabIndex = 8;
+            this.label3.Text = "label3";
             // 
             // label2
             // 
@@ -283,7 +295,6 @@
             // 
             this.panel3.Controls.Add(this.chartHardware);
             this.panel3.Controls.Add(this.TagName);
-            this.panel3.Controls.Add(this.button4);
             this.panel3.Controls.Add(this.picLogo);
             this.panel3.Controls.Add(this.picBack);
             this.panel3.Controls.Add(this.pictureBox5);
@@ -315,26 +326,13 @@
             // TagName
             // 
             this.TagName.AutoSize = true;
-            this.TagName.Font = new System.Drawing.Font("Lucida Bright", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TagName.Font = new System.Drawing.Font("Lucida Bright", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TagName.ForeColor = System.Drawing.Color.Green;
-            this.TagName.Location = new System.Drawing.Point(482, 330);
+            this.TagName.Location = new System.Drawing.Point(485, 382);
             this.TagName.Name = "TagName";
-            this.TagName.Size = new System.Drawing.Size(367, 42);
+            this.TagName.Size = new System.Drawing.Size(369, 42);
             this.TagName.TabIndex = 4;
             this.TagName.Text = "Tehdit Bulunamadı";
-            // 
-            // button4
-            // 
-            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.Font = new System.Drawing.Font("Lucida Bright", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button4.Location = new System.Drawing.Point(533, 431);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(283, 67);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "Run Smart Scan";
-            this.button4.UseVisualStyleBackColor = false;
             // 
             // picLogo
             // 
@@ -419,12 +417,12 @@
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.PictureBox picLogo;
         private System.Windows.Forms.Label TagName;
-        private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.PictureBox pictureBox7;
         private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.DataVisualization.Charting.Chart chartHardware;
+        private System.Windows.Forms.Label label3;
     }
 }
 

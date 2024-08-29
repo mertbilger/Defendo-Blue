@@ -1,8 +1,8 @@
-﻿using DocumentFormat.OpenXml.Vml.Office;
-using System;
+﻿using System;
 using System.Data;
 using System.Diagnostics;
 using System.Drawing;
+using System.Linq;
 using System.Security;
 using System.Windows.Forms;
 
@@ -14,6 +14,7 @@ namespace Defendo_Blue.Forms
         private string watchLog = "Security";
         private EventLog eventLog;
 
+        
         public WinEvent()
         {
             InitializeComponent();
@@ -35,6 +36,9 @@ namespace Defendo_Blue.Forms
             eventLog.EnableRaisingEvents = true;
 
             this.FormClosing += new FormClosingEventHandler(WinEvent_FormClosing);
+
+
+
         }
 
         private void OnEntryWritten(object source, EntryWrittenEventArgs e)
@@ -57,12 +61,14 @@ namespace Defendo_Blue.Forms
 
                 EventLog log = new EventLog(watchLog);
 
-                foreach (EventLogEntry entry in log.Entries)
+                var entries = log.Entries.Cast<EventLogEntry>()
+                    .Where(entry => entry.InstanceId == 4624)
+                    .OrderByDescending(entry => entry.TimeGenerated)
+                    .ToList();
+
+                foreach (EventLogEntry entry in entries)
                 {
-                    if (entry.InstanceId == 4624)
-                    {
-                        dataTable.Rows.Add(entry.Message);
-                    }
+                    dataTable.Rows.Add(entry.Message);
                 }
 
                 log.Close();
@@ -79,28 +85,48 @@ namespace Defendo_Blue.Forms
 
         private void ShowNotification(EventLogEntry entry)
         {
-            string userName = "Bilinmeyen Kullanıcı";
-            string ipAddress = "Bilinmiyor";
-
-            if (entry.ReplacementStrings.Length > 5)
+            try
             {
-                userName = entry.ReplacementStrings[5];
-            }
+                string userName = "Bilinmeyen Kullanıcı";
+                string ipAddress = "Bilinmiyor";
+                string logtype = "Bilinmiyor";
 
-            if (entry.ReplacementStrings.Length > 20)
+                if (entry.ReplacementStrings.Length > 5)
+                {
+                    userName = entry.ReplacementStrings[5];
+                }
+
+                if (entry.ReplacementStrings.Length > 18)
+                {
+                    ipAddress = entry.ReplacementStrings[18];
+                }
+
+                if (entry.ReplacementStrings.Length > 8)
+                {
+                    logtype = entry.ReplacementStrings[8];
+                }
+
+              
+                if (logtype == "2")
+                {
+                    string logonTime = entry.TimeGenerated.ToString("yyyy-MM-dd HH:mm:ss");
+
+                    string notificationText = $"Uzak Masaüstü Bağlantısı gerçekleşti\n" +
+                                               $"Kullanıcı: {userName}\n" +
+                                               $"Saat: {logonTime}\n" +
+                                               $"IP Adresi: {ipAddress}\n" +
+                                               $"Logon Type: {logtype}";
+
+                    notifyIcon.ShowBalloonTip(5000, "Event Log Monitor", notificationText, ToolTipIcon.Info);
+                }
+            }
+            catch (Exception ex)
             {
-                ipAddress = entry.ReplacementStrings[20];
+                MessageBox.Show($"Bir hata oluştu: {ex.Message}", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
-            string logonTime = entry.TimeGenerated.ToString("yyyy-MM-dd HH:mm:ss");
-
-            string notificationText = $"Uzak Masaüstü Bağlantısı gerçekleşti\n" +
-                                       $"Kullanıcı: {userName}\n" +
-                                       $"Saat: {logonTime}\n" +
-                                       $"IP Adresi: {ipAddress}";
-
-            notifyIcon.ShowBalloonTip(5000, "Event Log Monitor", notificationText, ToolTipIcon.Info);
         }
+
+
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -111,11 +137,11 @@ namespace Defendo_Blue.Forms
 
                 string userName = "Bilinmeyen Kullanıcı";
                 string ipAddress = "Bilinmiyor";
-                string logonTime = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+                string logtype = "Bilinmiyor";
+                string logonTime = "Bilinmiyor";
 
                 foreach (EventLogEntry entry in new EventLog(watchLog).Entries)
                 {
-                    // Message üzerinden olay kaydını arar
                     if (entry.Message == message)
                     {
                         if (entry.ReplacementStrings.Length > 5)
@@ -128,18 +154,38 @@ namespace Defendo_Blue.Forms
                             ipAddress = entry.ReplacementStrings[18];
                         }
 
+                        if (entry.ReplacementStrings.Length > 8)
+                        {
+                            logtype = entry.ReplacementStrings[8];
+                        }
+
+                        
+                        if (logtype == "2")
+                        {
+                            logtype = "Kullanıcı oturum açtı";
+                        }
+                        else
+                        {
+
+                            logtype = "Sistem";
+                        }
+
                         logonTime = entry.TimeGenerated.ToString("yyyy-MM-dd HH:mm:ss");
                         break;
                     }
                 }
 
-                string details = $"Tarih ve Saat: {logonTime}\n" +
-                                 $"Kullanıcı: {userName}\n" +
-                                 $"IP Adresi: {ipAddress}\n";
+                
+                string details = $"Kullanıcı: {userName}\n" +
+                                 $"IP Adresi: {ipAddress}\n" +
+                                 $"Saat: {logonTime}\n" +
+                                 $"Logon Type: {logtype}";
 
                 MessageBox.Show(details, "Event Log Detail", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
+
+
 
 
         private void button4_Click(object sender, EventArgs e)

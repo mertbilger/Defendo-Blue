@@ -4,6 +4,11 @@ using System.Windows.Forms;
 using System.Diagnostics;
 using System.Windows.Forms.DataVisualization.Charting;
 using Defendo_Blue.Forms;
+using ManagedCuda.BasicTypes;
+using System.IO;
+using System.Text;
+using System.Net.Sockets;
+using System.Net;
 
 namespace Defendo_Blue
 {
@@ -18,6 +23,7 @@ namespace Defendo_Blue
         private Timer timerUpdate;
         private Point? prevPosition = null;
         private ToolTip tooltip = new ToolTip();
+
 
         public Form1()
         {
@@ -37,8 +43,38 @@ namespace Defendo_Blue
                 winEventForm.Hide();
             };
             winEventForm.Show();
+
+            try
+            {
+                string localIP = GetLocalIPAddress();
+
+                label3.Text = $"Yerel IP Adresi: {localIP}\n";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Bir hata oluştu: {ex.Message}",
+                                "Hata",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Error);
+            }
+        }
+        private string GetLocalIPAddress()
+        {
+            string localIP = string.Empty;
+
+            foreach (IPAddress ip in Dns.GetHostAddresses(Dns.GetHostName()))
+            {
+                if (ip.AddressFamily == AddressFamily.InterNetwork) 
+                {
+                    localIP = ip.ToString();
+                    break;
+                }
+            }
+
+            return localIP;
         }
 
+       
         private void Setup()
         {
             notifyIcon1 = new NotifyIcon();
@@ -118,7 +154,7 @@ namespace Defendo_Blue
 
         private void TimerUpdate_Tick(object sender, EventArgs e)
         {
-            float cpuUsage =99 - IdleCounter.NextValue();
+            float cpuUsage = 99 - IdleCounter.NextValue();
 
             Series series = chartHardware.Series["CPU Kullanımı"];
             double currentTime = series.Points.Count;
@@ -242,5 +278,7 @@ namespace Defendo_Blue
         {
             ShowHardwareInfo();
         }
+
+
     }
 }

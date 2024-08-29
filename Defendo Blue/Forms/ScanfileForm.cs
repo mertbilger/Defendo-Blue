@@ -56,9 +56,13 @@ namespace Defendo_Blue.Forms
                 else
                 {
                     MessageBox.Show("Dosya daha önce taranmamış, şimdi taranıyor...", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    ScanResult scanResult = await virusTotal.ScanFileAsync(fileBytes, Path.GetFileName(filePath));
+                    MessageBox.Show("Tarama kuyruğa alındı.", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
         }
+
 
         private void Form_DragEnter(object sender, DragEventArgs e)
         {

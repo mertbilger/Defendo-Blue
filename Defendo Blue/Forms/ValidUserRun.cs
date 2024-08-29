@@ -23,7 +23,7 @@ namespace Defendo_Blue.Forms
 
                 string[] files = Directory.GetFiles(path, "*.*", SearchOption.TopDirectoryOnly);
 
-                checkedListBox1.Items.Clear(); // Mevcut öğeleri temizle
+                checkedListBox1.Items.Clear(); 
                 checkedListBox1.Items.AddRange(files.Select(file => Path.GetFileName(file)).ToArray());
             }
             catch (Exception ex)
