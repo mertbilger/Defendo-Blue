@@ -70,7 +70,6 @@
             // picLogo
             // 
             this.picLogo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(44)))), ((int)(((byte)(65)))));
-            this.picLogo.Image = global::Defendo_Blue.Properties.Resources._4527369_avatar_character_dragon_game_ice_icon;
             this.picLogo.Location = new System.Drawing.Point(0, 0);
             this.picLogo.Name = "picLogo";
             this.picLogo.Size = new System.Drawing.Size(70, 61);

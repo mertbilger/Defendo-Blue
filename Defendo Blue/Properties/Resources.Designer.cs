@@ -83,16 +83,6 @@ namespace Defendo_Blue.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
         /// </summary>
-        internal static System.Drawing.Bitmap _2205195_mobile_phone_screen_smart_icon__1_ {
-            get {
-                object obj = ResourceManager.GetObject("2205195_mobile_phone_screen_smart_icon (1)", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
-        /// </summary>
         internal static System.Drawing.Bitmap _2303113_controls_grid_menu_navigation_icon {
             get {
                 object obj = ResourceManager.GetObject("2303113_controls_grid_menu_navigation_icon", resourceCulture);
@@ -116,16 +106,6 @@ namespace Defendo_Blue.Properties {
         internal static System.Drawing.Bitmap _2890572_ai_artificial_intelligence_brain_electronics_notebook_icon__1_ {
             get {
                 object obj = ResourceManager.GetObject("2890572_ai_artificial intelligence_brain_electronics_notebook_icon (1)", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
-        /// </summary>
-        internal static System.Drawing.Bitmap _3 {
-            get {
-                object obj = ResourceManager.GetObject("3", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -176,26 +156,6 @@ namespace Defendo_Blue.Properties {
         internal static System.Drawing.Bitmap _4417121_firewall_server_fire_wall_web_icon {
             get {
                 object obj = ResourceManager.GetObject("4417121_firewall_server_fire_wall_web_icon", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
-        /// </summary>
-        internal static System.Drawing.Bitmap _4527369_avatar_character_dragon_game_ice_icon {
-            get {
-                object obj = ResourceManager.GetObject("4527369_avatar_character_dragon_game_ice_icon", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
-        /// </summary>
-        internal static System.Drawing.Bitmap _4527369_avatar_character_dragon_game_ice_icon1 {
-            get {
-                object obj = ResourceManager.GetObject("4527369_avatar_character_dragon_game_ice_icon1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -296,16 +256,6 @@ namespace Defendo_Blue.Properties {
         internal static System.Drawing.Bitmap Defendo_Blue_png {
             get {
                 object obj = ResourceManager.GetObject("Defendo Blue png", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
-        /// </summary>
-        internal static System.Drawing.Bitmap DefendoBlue {
-            get {
-                object obj = ResourceManager.GetObject("DefendoBlue", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

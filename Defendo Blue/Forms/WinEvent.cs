@@ -13,7 +13,6 @@ namespace Defendo_Blue.Forms
         private DataTable dataTable;
         private string watchLog = "Security";
         private EventLog eventLog;
-        private ContextMenuStrip contextMenu;
 
         public WinEvent()
         {
@@ -36,42 +35,20 @@ namespace Defendo_Blue.Forms
 
         private void Setup()
         {
-            notifyIcon = new NotifyIcon();
-            notifyIcon.Icon = SystemIcons.Information;
-            notifyIcon.BalloonTipIcon = ToolTipIcon.Info;
-            notifyIcon.Icon = new Icon("C:\\Users\\Mert\\Desktop\\MB\\Defendo Blue.ico");
-            notifyIcon.Visible = true;
-
-            contextMenu = new ContextMenuStrip();
-
-            ToolStripMenuItem option1 = new ToolStripMenuItem("Bilgi");
-            option1.BackColor = Color.FromArgb(52, 52, 52);
-            option1.ForeColor = Color.White;
-            option1.Font = new Font("Arial", 10, FontStyle.Regular);
-            option1.Click += (sender, e) =>
-            {
-                MessageBox.Show("Bilgisayar Güvenliği Aktif İzleniyor", "Bilgi");
-            };
-
-            contextMenu.Items.Add(option1);
-
-            notifyIcon.ContextMenuStrip = contextMenu; 
         }
 
-
-        private void OnEntryWritten(object source, EntryWrittenEventArgs e)
+        public void OnEntryWritten(object source, EntryWrittenEventArgs e)
         {
             if (e.Entry.InstanceId == 4624)
             {
                 this.Invoke(new Action(() =>
                 {
                     UpdateLogEntries();
-                    ShowNotification(e.Entry);
                 }));
             }
         }
 
-        private void UpdateLogEntries()
+        public void UpdateLogEntries()
         {
             try
             {
@@ -100,51 +77,6 @@ namespace Defendo_Blue.Forms
                 MessageBox.Show("Event log okunurken bir hata oluştu: " + ex.Message, "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
-        private void ShowNotification(EventLogEntry entry)
-        {
-            try
-            {
-                string userName = "Bilinmeyen Kullanıcı";
-                string ipAddress = "Bilinmiyor";
-                string logtype = "Bilinmiyor";
-
-                if (entry.ReplacementStrings.Length > 5)
-                {
-                    userName = entry.ReplacementStrings[5];
-                }
-
-                if (entry.ReplacementStrings.Length > 18)
-                {
-                    ipAddress = entry.ReplacementStrings[18];
-                }
-
-                if (entry.ReplacementStrings.Length > 8)
-                {
-                    logtype = entry.ReplacementStrings[8];
-                }
-
-              
-                if (logtype == "2")
-                {
-                    string logonTime = entry.TimeGenerated.ToString("yyyy-MM-dd HH:mm:ss");
-
-                    string notificationText = $"Uzak Masaüstü Bağlantısı gerçekleşti\n" +
-                                               $"Kullanıcı : {userName}\n" +
-                                               $"Saat : {logonTime}\n" +
-                                               $"IP Adresi : {ipAddress}\n" +
-                                               $"Giriş Tipi : {logtype}";
-
-                    notifyIcon.ShowBalloonTip(5000, "Event Log Monitor", notificationText, ToolTipIcon.Info);
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Bir hata oluştu: {ex.Message}", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -177,39 +109,22 @@ namespace Defendo_Blue.Forms
                             logtype = entry.ReplacementStrings[8];
                         }
 
-                        
-                        if (logtype == "2")
-                        {
-                            logtype = "Kullanıcı oturum açtı";
-                        }
-                        else
-                        {
-
-                            logtype = "Sistem";
-                        }
-
+                        logtype = logtype == "2" ? "Kullanıcı oturum açtı" : "Sistem";
                         logonTime = entry.TimeGenerated.ToString("yyyy-MM-dd HH:mm:ss");
                         break;
                     }
                 }
 
-                
                 string details = $"Kullanıcı : {userName}\n" +
                                  $"IP Adresi : {ipAddress}\n" +
                                  $"Saat : {logonTime}\n" +
                                  $"Giriş Tipi : {logtype}";
 
-                MessageBox.Show(details, "Event Log Detail", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(details, "Event Log Detayı", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
-
-
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-            UpdateLogEntries();
-        }
+   
 
         private void TransparentControl()
         {
@@ -222,8 +137,16 @@ namespace Defendo_Blue.Forms
 
         private void WinEvent_FormClosing(object sender, FormClosingEventArgs e)
         {
-            eventLog.EnableRaisingEvents = false;
-            eventLog.Dispose();
+            if (eventLog != null)
+            {
+                eventLog.EnableRaisingEvents = false;
+                eventLog.Dispose();
+            }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            UpdateLogEntries();
         }
     }
 }

@@ -109,20 +109,20 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(44)))), ((int)(((byte)(65)))));
             this.label2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.label2.Font = new System.Drawing.Font("Lucida Bright", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Lucida Bright", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label2.Location = new System.Drawing.Point(98, 9);
+            this.label2.Location = new System.Drawing.Point(104, 10);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(146, 23);
+            this.label2.Size = new System.Drawing.Size(175, 24);
             this.label2.TabIndex = 4;
-            this.label2.Text = "Defendo Blue";
+            this.label2.Text = "DEFENDO BLUE";
             // 
             // pictureBox4
             // 
-            this.pictureBox4.Image = global::Defendo_Blue.Properties.Resources._4527369_avatar_character_dragon_game_ice_icon;
-            this.pictureBox4.Location = new System.Drawing.Point(12, 0);
+            this.pictureBox4.Image = global::Defendo_Blue.Properties.Resources.Defendo_Blue_png;
+            this.pictureBox4.Location = new System.Drawing.Point(0, -9);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(80, 50);
+            this.pictureBox4.Size = new System.Drawing.Size(114, 69);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox4.TabIndex = 7;
             this.pictureBox4.TabStop = false;

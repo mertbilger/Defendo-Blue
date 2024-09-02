@@ -34,14 +34,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             this.SuspendLayout();
             // 
-            // pictureBox
-            // 
-            this.pictureBox.Image = global::Defendo_Blue.Properties.Resources.DefendoBlue;
-            this.pictureBox.Location = new System.Drawing.Point(-3, -7);
-            this.pictureBox.Name = "pictureBox";
-            this.pictureBox.Size = new System.Drawing.Size(850, 538);
-            this.pictureBox.TabIndex = 0;
-            this.pictureBox.TabStop = false;
             // 
             // resultTextBox
             // 

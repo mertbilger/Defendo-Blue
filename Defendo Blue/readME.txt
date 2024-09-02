@@ -17,12 +17,12 @@ Mert'in yapamadıkları
 -----------------------
 Uygulama direkt çalışmıyor!
 Form kapandığında uygulamaya tekrardan ulaşılamıyor.
-Sağ tuş "Bilgi" hiç bir anlamı yok.
+Sağ tuş "Bilgi" hiç bir anlamı yok. // GÜNCELLENDİ
 Sürükle bırak yok!
 URL'i 2 kere tarıyor?
-Yalan yanlış bilgi veriyor.
+Yalan yanlış bilgi veriyor. // GÜNCELLENDİ
 Ekran kilitlendi, kilit açıldı diğer giriş tipleriyle ilgili hiç bilgi yok.
-Event loglar kayıt oluşmadan görünmüyor.
+Event loglar kayıt oluşmadan görünmüyor. // GÜNCELLENDİ
 desktop.ini dosyaları hiç görünmesin.
 
 

@@ -6,6 +6,10 @@ using System.Windows.Forms.DataVisualization.Charting;
 using Defendo_Blue.Forms;
 using System.Net.Sockets;
 using System.Net;
+using static Defendo_Blue.Forms.WinEvent;
+using System.Management.Instrumentation;
+using System.Security;
+using System.Linq;
 
 namespace Defendo_Blue
 {
@@ -13,6 +17,8 @@ namespace Defendo_Blue
     {
         private ContextMenuStrip contextMenu;
         private WinEvent winEventForm;
+        private string watchLog = "Security";
+        private EventLog eventLog;
 
         static readonly PerformanceCounter IdleCounter = new PerformanceCounter("Processor", "% Idle Time", "_Total");
         static readonly PerformanceCounter RamCounter = new PerformanceCounter("Memory", "Available MBytes");
@@ -20,6 +26,7 @@ namespace Defendo_Blue
         private Timer timerUpdate;
         private Point? prevPosition = null;
         private ToolTip tooltip = new ToolTip();
+
 
 
         public Form1()
@@ -43,18 +50,14 @@ namespace Defendo_Blue
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            winEventForm = new WinEvent();
-            winEventForm.Load += (s, args) =>
-            {
-                winEventForm.Hide();
-            };
-            winEventForm.Show();
-
             try
             {
                 string localIP = GetLocalIPAddress();
 
                 label3.Text = $"Yerel IP Adresi: {localIP}\n";
+                eventLog = new EventLog(watchLog);
+                eventLog.EntryWritten += new EntryWrittenEventHandler(OnEntryWritten);
+                eventLog.EnableRaisingEvents = true;
             }
             catch (Exception ex)
             {
@@ -123,7 +126,7 @@ namespace Defendo_Blue
         }
         private void NotifyIcon_Click(object sender, EventArgs e)
         {
-            this.WindowState = FormWindowState.Minimized;
+            this.WindowState = FormWindowState.Normal;
         }
 
         private void SetupChart()
@@ -289,6 +292,95 @@ namespace Defendo_Blue
                             "CPU Bilgisi",
                             MessageBoxButtons.OK,
                             MessageBoxIcon.Information);
+        }
+
+        private void OnEntryWritten(object source, EntryWrittenEventArgs e)
+        {
+            if (e.Entry.InstanceId == 4624)
+            {
+                this.Invoke(new Action(() =>
+                {
+                    UpdateLogEntries();
+                    ShowNotification(e.Entry);
+                }));
+            }
+        }
+
+        private void UpdateLogEntries()
+        {
+            try
+            {
+                using (EventLog log = new EventLog(watchLog))
+                {
+                    var entries = log.Entries.Cast<EventLogEntry>()
+                        .Where(entry => entry.InstanceId == 4624)
+                        .OrderByDescending(entry => entry.TimeGenerated)
+                        .ToList();
+
+                }
+            }
+            catch (SecurityException)
+            {
+                MessageBox.Show("Event loguna erişim reddedildi. Lütfen izinlerinizi kontrol edin.", "İzin Hatası", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Event log okunurken bir hata oluştu: " + ex.Message, "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void ShowNotification(EventLogEntry entry)
+        {
+            try
+            {
+                string userName = "Bilinmeyen Kullanıcı";
+                string ipAddress = "Bilinmiyor";
+                string logtype = "Bilinmiyor";
+
+                if (entry.ReplacementStrings.Length > 5)
+                {
+                    userName = entry.ReplacementStrings[5];
+                }
+
+                if (entry.ReplacementStrings.Length > 18)
+                {
+                    ipAddress = entry.ReplacementStrings[18];
+                }
+
+                if (entry.ReplacementStrings.Length > 8)
+                {
+                    logtype = entry.ReplacementStrings[8];
+                }
+
+                if (int.TryParse(logtype, out int logtypeCode))
+                {
+                    if (Enum.IsDefined(typeof(LoginTypes), logtypeCode))
+                    {
+                        logtype = ((LoginTypes)logtypeCode).GetDescription();
+                    }
+                    else
+                    {
+                        logtype = "Bilinmeyen Giriş Tipi";
+                    }
+                }
+
+                if (logtypeCode == 2)
+                {
+                    string logonTime = entry.TimeGenerated.ToString("yyyy-MM-dd HH:mm:ss");
+
+                    string notificationText =
+                                              $"Kullanıcı : {userName}\n" +
+                                              $"Saat : {logonTime}\n" +
+                                              $"IP Adresi : {ipAddress}\n";
+                                              
+
+                    notifyIcon.ShowBalloonTip(5000, logtype, notificationText, ToolTipIcon.Info);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Bir hata oluştu: {ex.Message}", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
 
