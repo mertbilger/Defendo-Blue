@@ -16,7 +16,6 @@ namespace Defendo_Blue.Forms
         public ScanUrlForm()
         {
             InitializeComponent();
-            this.CheckUrl.Click += new EventHandler(CheckUrl_Click);
         }
 
         private void PrintScan(UrlReport urlReport)

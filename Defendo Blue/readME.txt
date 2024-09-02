@@ -19,7 +19,7 @@ Uygulama direkt çalışmıyor!
 Form kapandığında uygulamaya tekrardan ulaşılamıyor.
 Sağ tuş "Bilgi" hiç bir anlamı yok. // GÜNCELLENDİ
 Sürükle bırak yok!
-URL'i 2 kere tarıyor?
+URL'i 2 kere tarıyor? // GÜNCELLENDİ
 Yalan yanlış bilgi veriyor. // GÜNCELLENDİ
 Ekran kilitlendi, kilit açıldı diğer giriş tipleriyle ilgili hiç bilgi yok.
 Event loglar kayıt oluşmadan görünmüyor. // GÜNCELLENDİ
