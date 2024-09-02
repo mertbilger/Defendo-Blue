@@ -73,39 +73,9 @@ namespace Defendo_Blue.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
         /// </summary>
-        internal static System.Drawing.Bitmap _1034363_advantage_protection_protect_security_shield_icon__1_ {
-            get {
-                object obj = ResourceManager.GetObject("1034363_advantage_protection_protect_security_shield_icon (1)", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
-        /// </summary>
         internal static System.Drawing.Bitmap _199213_log_file_extension_format_icon__1_ {
             get {
                 object obj = ResourceManager.GetObject("199213_log_file_extension_format_icon (1)", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
-        /// </summary>
-        internal static System.Drawing.Bitmap _2203529_app_block_menu_setting_tile_icon {
-            get {
-                object obj = ResourceManager.GetObject("2203529_app_block_menu_setting_tile_icon", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
-        /// </summary>
-        internal static System.Drawing.Bitmap _2205195_mobile_phone_screen_smart_icon {
-            get {
-                object obj = ResourceManager.GetObject("2205195_mobile_phone_screen_smart_icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -126,16 +96,6 @@ namespace Defendo_Blue.Properties {
         internal static System.Drawing.Bitmap _2303113_controls_grid_menu_navigation_icon {
             get {
                 object obj = ResourceManager.GetObject("2303113_controls_grid_menu_navigation_icon", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
-        /// </summary>
-        internal static System.Drawing.Bitmap _2537363_protection_safety_security_shield_icon {
-            get {
-                object obj = ResourceManager.GetObject("2537363_protection_safety_security_shield_icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -253,16 +213,6 @@ namespace Defendo_Blue.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
         /// </summary>
-        internal static System.Drawing.Bitmap _5172975_crime_finger_fingerprint_identity_internet_icon {
-            get {
-                object obj = ResourceManager.GetObject("5172975_crime_finger_fingerprint_identity_internet_icon", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
-        /// </summary>
         internal static System.Drawing.Bitmap _5173002_alarm_alert_bell_internet_notice_icon {
             get {
                 object obj = ResourceManager.GetObject("5173002_alarm_alert_bell_internet_notice_icon", resourceCulture);
@@ -293,16 +243,6 @@ namespace Defendo_Blue.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
         /// </summary>
-        internal static System.Drawing.Bitmap _52641_registry_icon {
-            get {
-                object obj = ResourceManager.GetObject("52641_registry_icon", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
-        /// </summary>
         internal static System.Drawing.Bitmap _8664938_trash_can_delete_remove_icon {
             get {
                 object obj = ResourceManager.GetObject("8664938_trash_can_delete_remove_icon", resourceCulture);
@@ -313,69 +253,9 @@ namespace Defendo_Blue.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
         /// </summary>
-        internal static System.Drawing.Bitmap _8674904_ic_fluent_fingerprint_regular_icon {
-            get {
-                object obj = ResourceManager.GetObject("8674904_ic_fluent_fingerprint_regular_icon", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
-        /// </summary>
         internal static System.Drawing.Bitmap _8725957_file_plus_alt_icon {
             get {
                 object obj = ResourceManager.GetObject("8725957_file_plus_alt_icon", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
-        /// </summary>
-        internal static System.Drawing.Bitmap _9004757_shield_security_protection_safety_icon {
-            get {
-                object obj = ResourceManager.GetObject("9004757_shield_security_protection_safety_icon", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
-        /// </summary>
-        internal static System.Drawing.Bitmap _9004757_shield_security_protection_safety_icon__1_ {
-            get {
-                object obj = ResourceManager.GetObject("9004757_shield_security_protection_safety_icon (1)", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
-        /// </summary>
-        internal static System.Drawing.Bitmap _9071330_personal_privacy_security_icon {
-            get {
-                object obj = ResourceManager.GetObject("9071330_personal_privacy_security_icon", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
-        /// </summary>
-        internal static System.Drawing.Bitmap _98778_windows_firewall_icon {
-            get {
-                object obj = ResourceManager.GetObject("98778_windows_firewall_icon", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
-        /// </summary>
-        internal static System.Drawing.Bitmap application {
-            get {
-                object obj = ResourceManager.GetObject("application", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -426,16 +306,6 @@ namespace Defendo_Blue.Properties {
         internal static System.Drawing.Bitmap DefendoBlue {
             get {
                 object obj = ResourceManager.GetObject("DefendoBlue", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
-        /// </summary>
-        internal static System.Drawing.Bitmap folder_plus_circle_16769522 {
-            get {
-                object obj = ResourceManager.GetObject("folder-plus-circle_16769522", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

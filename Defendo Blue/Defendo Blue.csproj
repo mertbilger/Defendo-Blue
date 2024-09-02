@@ -35,6 +35,9 @@
   <PropertyGroup>
     <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Defendo Blue.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Aspose.Slides, Version=24.8.0.0, Culture=neutral, PublicKeyToken=716fcc553a201e56, processorArchitecture=MSIL">
       <HintPath>..\packages\Aspose.Slides.NET.24.8.0\lib\net4.0-client\Aspose.Slides.dll</HintPath>
@@ -259,16 +262,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\wallpaperflare.com_wallpaper.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\98778_windows_firewall_icon.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\4417121_firewall_server_fire_wall_web_icon.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\application.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\5173002_alarm_alert_bell_internet_notice_icon.png" />
@@ -286,34 +280,13 @@
     <None Include="Resources\5173017_antivirus_internet_protect_safe_security_icon.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\8674904_ic_fluent_fingerprint_regular_icon.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\5172975_crime_finger_fingerprint_identity_internet_icon.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\background-gradient-lights %282%29.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\3.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\bg.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\9004757_shield_security_protection_safety_icon.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\9004757_shield_security_protection_safety_icon %281%29.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\5173021_antivirus_internet_lock_locked_protect_icon.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\folder-plus-circle_16769522.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\data_1575959.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\5172970_document_file_internet_lock_locked_icon.png" />
@@ -343,9 +316,6 @@
     <None Include="Resources\Defendo Blue png.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\52641_registry_icon.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\2890572_ai_artificial intelligence_brain_electronics_notebook_icon %281%29.png" />
   </ItemGroup>
   <ItemGroup>
@@ -356,6 +326,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\3994376_arrow_back_left_navigation_previous_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Defendo Blue.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

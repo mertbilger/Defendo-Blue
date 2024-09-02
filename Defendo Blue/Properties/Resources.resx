@@ -124,12 +124,6 @@
   <data name="5173017_antivirus_internet_protect_safe_security_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\5173017_antivirus_internet_protect_safe_security_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="2537363_protection_safety_security_shield_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\2537363_protection_safety_security_shield_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="52641_registry_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\52641_registry_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="4417121_firewall_server_fire_wall_web_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\4417121_firewall_server_fire_wall_web_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -138,12 +132,6 @@
   </data>
   <data name="8725957_file_plus_alt_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\8725957_file_plus_alt_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="9004757_shield_security_protection_safety_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\9004757_shield_security_protection_safety_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="98778_windows_firewall_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\98778_windows_firewall_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="5173002_alarm_alert_bell_internet_notice_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\5173002_alarm_alert_bell_internet_notice_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -163,17 +151,14 @@
   <data name="2890572_ai_artificial intelligence_brain_electronics_notebook_icon (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\2890572_ai_artificial intelligence_brain_electronics_notebook_icon (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="3994376_arrow_back_left_navigation_previous_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\3994376_arrow_back_left_navigation_previous_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="2205195_mobile_phone_screen_smart_icon (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\2205195_mobile_phone_screen_smart_icon (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="1034363_advantage_protection_protect_security_shield_icon (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1034363_advantage_protection_protect_security_shield_icon (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="5173021_antivirus_internet_lock_locked_protect_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\5173021_antivirus_internet_lock_locked_protect_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="8674904_ic_fluent_fingerprint_regular_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\8674904_ic_fluent_fingerprint_regular_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="background-gradient-lights (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\background-gradient-lights (2).jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -183,21 +168,6 @@
   </data>
   <data name="data_1575959" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\data_1575959.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="2205195_mobile_phone_screen_smart_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\2205195_mobile_phone_screen_smart_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="9071330_personal_privacy_security_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\9071330_personal_privacy_security_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="folder-plus-circle_16769522" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\folder-plus-circle_16769522.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="2203529_app_block_menu_setting_tile_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\2203529_app_block_menu_setting_tile_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="5172975_crime_finger_fingerprint_identity_internet_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\5172975_crime_finger_fingerprint_identity_internet_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="log" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\log.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -211,17 +181,11 @@
   <data name="2697649_apple_store_app_app store_apps_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\2697649_apple_store_app_app store_apps_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="9004757_shield_security_protection_safety_icon (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\9004757_shield_security_protection_safety_icon (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="3213274_mobile_padlock_secure_security_smartphone_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\3213274_mobile_padlock_secure_security_smartphone_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Defendo Blue png" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Defendo Blue png.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="application" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\application.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="DefendoBlue" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\DefendoBlue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -234,8 +198,5 @@
   </data>
   <data name="bg" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\bg.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="3994376_arrow_back_left_navigation_previous_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\3994376_arrow_back_left_navigation_previous_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

@@ -13,17 +13,13 @@ namespace Defendo_Blue.Forms
         private DataTable dataTable;
         private string watchLog = "Security";
         private EventLog eventLog;
+        private ContextMenuStrip contextMenu;
 
-        
         public WinEvent()
         {
             InitializeComponent();
             TransparentControl();
-
-            notifyIcon = new NotifyIcon();
-            notifyIcon.Icon = SystemIcons.Information;
-            notifyIcon.BalloonTipIcon = ToolTipIcon.Info;
-            notifyIcon.Visible = true;
+            Setup();
 
             dataTable = new DataTable();
             dataTable.Columns.Add("Message", typeof(string));
@@ -36,10 +32,32 @@ namespace Defendo_Blue.Forms
             eventLog.EnableRaisingEvents = true;
 
             this.FormClosing += new FormClosingEventHandler(WinEvent_FormClosing);
-
-
-
         }
+
+        private void Setup()
+        {
+            notifyIcon = new NotifyIcon();
+            notifyIcon.Icon = SystemIcons.Information;
+            notifyIcon.BalloonTipIcon = ToolTipIcon.Info;
+            notifyIcon.Icon = new Icon("C:\\Users\\Mert\\Desktop\\MB\\Defendo Blue.ico");
+            notifyIcon.Visible = true;
+
+            contextMenu = new ContextMenuStrip();
+
+            ToolStripMenuItem option1 = new ToolStripMenuItem("Bilgi");
+            option1.BackColor = Color.FromArgb(52, 52, 52);
+            option1.ForeColor = Color.White;
+            option1.Font = new Font("Arial", 10, FontStyle.Regular);
+            option1.Click += (sender, e) =>
+            {
+                MessageBox.Show("Bilgisayar Güvenliği Aktif İzleniyor", "Bilgi");
+            };
+
+            contextMenu.Items.Add(option1);
+
+            notifyIcon.ContextMenuStrip = contextMenu; 
+        }
+
 
         private void OnEntryWritten(object source, EntryWrittenEventArgs e)
         {
@@ -112,10 +130,10 @@ namespace Defendo_Blue.Forms
                     string logonTime = entry.TimeGenerated.ToString("yyyy-MM-dd HH:mm:ss");
 
                     string notificationText = $"Uzak Masaüstü Bağlantısı gerçekleşti\n" +
-                                               $"Kullanıcı: {userName}\n" +
-                                               $"Saat: {logonTime}\n" +
-                                               $"IP Adresi: {ipAddress}\n" +
-                                               $"Logon Type: {logtype}";
+                                               $"Kullanıcı : {userName}\n" +
+                                               $"Saat : {logonTime}\n" +
+                                               $"IP Adresi : {ipAddress}\n" +
+                                               $"Giriş Tipi : {logtype}";
 
                     notifyIcon.ShowBalloonTip(5000, "Event Log Monitor", notificationText, ToolTipIcon.Info);
                 }
@@ -176,10 +194,10 @@ namespace Defendo_Blue.Forms
                 }
 
                 
-                string details = $"Kullanıcı: {userName}\n" +
-                                 $"IP Adresi: {ipAddress}\n" +
-                                 $"Saat: {logonTime}\n" +
-                                 $"Logon Type: {logtype}";
+                string details = $"Kullanıcı : {userName}\n" +
+                                 $"IP Adresi : {ipAddress}\n" +
+                                 $"Saat : {logonTime}\n" +
+                                 $"Giriş Tipi : {logtype}";
 
                 MessageBox.Show(details, "Event Log Detail", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }

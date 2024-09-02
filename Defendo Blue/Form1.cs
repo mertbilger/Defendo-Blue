@@ -30,6 +30,15 @@ namespace Defendo_Blue
             SetupChart();
             SetupTimer();
             this.Load += Form1_Load;
+            this.FormClosing += Form1_FormClosing;
+        }
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (e.CloseReason == CloseReason.UserClosing)
+            {
+                e.Cancel = true; 
+                this.Hide();  
+            }
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -74,9 +83,9 @@ namespace Defendo_Blue
        
         private void Setup()
         {
-            notifyIcon1 = new NotifyIcon();
-            notifyIcon1.Visible = true;
-            notifyIcon1.Icon = new Icon("C:\\Users\\Mert\\Desktop\\MB\\security\\security.ico");
+            notifyIcon = new NotifyIcon();
+            notifyIcon.Visible = true;
+            notifyIcon.Icon = new Icon("C:\\Users\\Mert\\Desktop\\MB\\security\\security.ico");
 
             contextMenu = new ContextMenuStrip();
 
@@ -109,7 +118,12 @@ namespace Defendo_Blue
             contextMenu.Items.Add(option3);
             contextMenu.Items.Add(option4);
 
-            notifyIcon1.ContextMenuStrip = contextMenu;
+            notifyIcon.ContextMenuStrip = contextMenu;
+            notifyIcon.Click += NotifyIcon_Click;
+        }
+        private void NotifyIcon_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
 
         private void SetupChart()
@@ -152,7 +166,6 @@ namespace Defendo_Blue
         private void TimerUpdate_Tick(object sender, EventArgs e)
         {
             float cpuUsage = 99 - IdleCounter.NextValue();
-
             Series series = chartHardware.Series["CPU Kullanımı"];
             double currentTime = series.Points.Count;
 
@@ -170,7 +183,11 @@ namespace Defendo_Blue
 
             chartHardware.ChartAreas[0].AxisX.Maximum = series.Points.Count;
             chartHardware.ChartAreas[0].AxisX.Minimum = Math.Max(0, chartHardware.ChartAreas[0].AxisX.Maximum - maxPoints);
+
+            float ramAvailable = RamCounter.NextValue();
+            label4.Text = $"Kalan Bellek: {ramAvailable} MB";
         }
+
 
         private void chart_MouseMove(object sender, MouseEventArgs e)
         {
@@ -236,7 +253,7 @@ namespace Defendo_Blue
 
         private void Exit(object sender, EventArgs e)
         {
-            this.Close();
+            Application.Exit();
         }
 
         private void TransparentControls()
@@ -246,6 +263,9 @@ namespace Defendo_Blue
 
             TagName.Parent = picBack;
             TagName.BackColor = Color.Transparent;
+
+            label4.Parent = picBack;
+            label4.BackColor=Color.Transparent;
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -260,20 +280,15 @@ namespace Defendo_Blue
             registryForm.Show();
         }
 
-        private void ShowHardwareInfo()
+        private void chartHardware_Click(object sender, EventArgs e)
         {
             float cpuUsage = 100 - IdleCounter.NextValue();
             float ramAvailable = RamCounter.NextValue();
 
-            MessageBox.Show($"CPU Kullanımı: {cpuUsage}%\nKalan Bellek: {ramAvailable} MB",
+            MessageBox.Show($"CPU Kullanımı: {cpuUsage}%\nKalan Bellek : {ramAvailable} MB",
                             "CPU Bilgisi",
                             MessageBoxButtons.OK,
                             MessageBoxIcon.Information);
-        }
-
-        private void chartHardware_Click(object sender, EventArgs e)
-        {
-            ShowHardwareInfo();
         }
 
 
