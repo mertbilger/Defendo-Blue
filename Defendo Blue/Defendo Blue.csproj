@@ -59,6 +59,9 @@
     <Reference Include="Hardware.Info, Version=100.1.1.0, Culture=neutral, PublicKeyToken=3130d442e696f124, processorArchitecture=MSIL">
       <HintPath>..\packages\Hardware.Info.100.1.1\lib\netstandard2.0\Hardware.Info.dll</HintPath>
     </Reference>
+    <Reference Include="LiteDB, Version=5.0.21.0, Culture=neutral, PublicKeyToken=4ee40123013c9f27, processorArchitecture=MSIL">
+      <HintPath>..\packages\LiteDB.5.0.21\lib\net45\LiteDB.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Office.Interop.Excel.15.0.4795.1001\lib\net20\Microsoft.Office.Interop.Excel.dll</HintPath>
       <EmbedInteropTypes>True</EmbedInteropTypes>
@@ -203,7 +206,7 @@
     <Compile Include="Forms\WinEvent.Designer.cs">
       <DependentUpon>WinEvent.cs</DependentUpon>
     </Compile>
-    <Compile Include="Models\Enums.cs" />
+    <Compile Include="Utils\Enums.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
@@ -331,5 +334,6 @@
   <ItemGroup>
     <Content Include="Defendo Blue.ico" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

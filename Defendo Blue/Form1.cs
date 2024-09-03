@@ -56,6 +56,21 @@ namespace Defendo_Blue
             this.Show();
             this.Activate();
         }
+        private string GetLocalIPAddress()
+        {
+            string localIP = string.Empty;
+
+            foreach (IPAddress ip in Dns.GetHostAddresses(Dns.GetHostName()))
+            {
+                if (ip.AddressFamily == AddressFamily.InterNetwork) 
+                {
+                    localIP = ip.ToString();
+                    break;
+                }
+            }
+
+            return localIP;
+        }
         private void Form1_Load(object sender, EventArgs e)
         {
             try
@@ -75,23 +90,7 @@ namespace Defendo_Blue
                                 MessageBoxIcon.Error);
             }
         }
-        private string GetLocalIPAddress()
-        {
-            string localIP = string.Empty;
 
-            foreach (IPAddress ip in Dns.GetHostAddresses(Dns.GetHostName()))
-            {
-                if (ip.AddressFamily == AddressFamily.InterNetwork) 
-                {
-                    localIP = ip.ToString();
-                    break;
-                }
-            }
-
-            return localIP;
-        }
-
-       
         private void Setup()
         {
             notifyIcon = new NotifyIcon();
@@ -104,19 +103,19 @@ namespace Defendo_Blue
             option1.BackColor = Color.FromArgb(52, 52, 52);
             option1.ForeColor = Color.White;
             option1.Font = new Font("Arial", 10, FontStyle.Regular);
-            option1.Click += Scan_Files;
+            option1.Click += button3_Click_1;
 
             ToolStripMenuItem option2 = new ToolStripMenuItem("URL Tara");
             option2.BackColor = Color.FromArgb(52, 52, 52);
             option2.ForeColor = Color.White;
             option2.Font = new Font("Arial", 10, FontStyle.Regular);
-            option2.Click += Scan_Url;
+            option2.Click += button2_Click;
 
             ToolStripMenuItem option3 = new ToolStripMenuItem("Olay Günlüğü Göster");
             option3.BackColor = Color.FromArgb(52, 52, 52);
             option3.ForeColor = Color.White;
             option3.Font = new Font("Arial", 10, FontStyle.Regular);
-            option3.Click += WinEvent_Logs;
+            option3.Click += button5_Click;
 
             ToolStripMenuItem option4 = new ToolStripMenuItem("Çıkış");
             option4.BackColor = Color.FromArgb(52, 52, 52);
@@ -235,6 +234,12 @@ namespace Defendo_Blue
             hızlıTarama.Show();
         }
 
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            ScanUrlForm scanurlForm = new ScanUrlForm();
+            scanurlForm.Show();
+        }
         private void button3_Click_1(object sender, EventArgs e)
         {
             ScanfileForm scanfileForm = new ScanfileForm();
@@ -247,54 +252,15 @@ namespace Defendo_Blue
             winEventLog.Show();
         }
 
-        private void Scan_Files(object sender, EventArgs e)
+        private void button6_Click(object sender, EventArgs e)
         {
-            ScanfileForm scanfileForm = new ScanfileForm();
-            scanfileForm.Show();
-        }
-
-        private void Scan_Url(object sender, EventArgs e)
-        {
-            ScanUrlForm scanurlForm = new ScanUrlForm();
-            scanurlForm.Show();
-        }
-
-        private void WinEvent_Logs(object sender, EventArgs e)
-        {
-            if (winEventForm != null)
-            {
-                winEventForm.Show();
-                winEventForm.BringToFront();
-            }
+            RegistryForm registryForm = new RegistryForm();
+            registryForm.Show();
         }
 
         private void Exit(object sender, EventArgs e)
         {
             Application.Exit();
-        }
-
-        private void TransparentControls()
-        {
-            picLogo.Parent = picBack;
-            picLogo.BackColor = Color.Transparent;
-
-            TagName.Parent = picBack;
-            TagName.BackColor = Color.Transparent;
-
-            label4.Parent = picBack;
-            label4.BackColor=Color.Transparent;
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            ScanUrlForm scanurlForm = new ScanUrlForm();
-            scanurlForm.Show();
-        }
-
-        private void button6_Click(object sender, EventArgs e)
-        {
-            RegistryForm registryForm = new RegistryForm();
-            registryForm.Show();
         }
 
         private void OnEntryWritten(object source, EntryWrittenEventArgs e)
@@ -385,5 +351,18 @@ namespace Defendo_Blue
                 MessageBox.Show($"Bir hata oluştu: {ex.Message}", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void TransparentControls()
+        {
+            picLogo.Parent = picBack;
+            picLogo.BackColor = Color.Transparent;
+
+            TagName.Parent = picBack;
+            TagName.BackColor = Color.Transparent;
+
+            label4.Parent = picBack;
+            label4.BackColor = Color.Transparent;
+        }
+
     }
 }
