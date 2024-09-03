@@ -76,6 +76,7 @@
             // 
             this.notifyIcon.Text = "notifyIcon1";
             this.notifyIcon.Visible = true;
+            this.notifyIcon.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.notifyIcon_MouseDoubleClick);
             // 
             // panel1
             // 

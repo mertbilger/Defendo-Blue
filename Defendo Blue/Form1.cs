@@ -38,7 +38,19 @@ namespace Defendo_Blue
             SetupTimer();
             this.Load += Form1_Load;
             this.FormClosing += Form1_FormClosing;
+            notifyIcon.Click += notifyIcon_MouseDoubleClick;
         }
+
+        private void notifyIcon_MouseDoubleClick(object sender, EventArgs e)
+        {
+            if (this.WindowState == FormWindowState.Minimized)
+            {
+                this.WindowState = FormWindowState.Normal;
+            }
+            this.Show();
+            this.Activate();
+        }
+
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (e.CloseReason == CloseReason.UserClosing)
@@ -88,7 +100,7 @@ namespace Defendo_Blue
         {
             notifyIcon = new NotifyIcon();
             notifyIcon.Visible = true;
-            notifyIcon.Icon = new Icon("C:\\Users\\Mert\\Desktop\\MB\\security\\security.ico");
+            notifyIcon.Icon = Properties.Resources.Defendo_Blue;
 
             contextMenu = new ContextMenuStrip();
 
@@ -122,11 +134,7 @@ namespace Defendo_Blue
             contextMenu.Items.Add(option4);
 
             notifyIcon.ContextMenuStrip = contextMenu;
-            notifyIcon.Click += NotifyIcon_Click;
-        }
-        private void NotifyIcon_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Normal;
+            
         }
 
         private void SetupChart()
@@ -382,7 +390,5 @@ namespace Defendo_Blue
                 MessageBox.Show($"Bir hata oluştu: {ex.Message}", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
-
     }
 }

@@ -15,8 +15,8 @@ Her metot için try catch konulacak. Anlamlı uyarılar basılacak!
 
 Mert'in yapamadıkları
 -----------------------
-Uygulama direkt çalışmıyor!
-Form kapandığında uygulamaya tekrardan ulaşılamıyor.
+Uygulama direkt çalışmıyor! // GÜNCELLENDİ
+Form kapandığında uygulamaya tekrardan ulaşılamıyor. // GÜNCELLENDİ
 Sağ tuş "Bilgi" hiç bir anlamı yok. // GÜNCELLENDİ
 Sürükle bırak yok!
 URL'i 2 kere tarıyor? // GÜNCELLENDİ

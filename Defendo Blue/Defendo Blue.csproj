@@ -34,7 +34,8 @@
   </PropertyGroup>
   <PropertyGroup />
   <PropertyGroup>
-    <ApplicationIcon>Defendo Blue.ico</ApplicationIcon>
+    <ApplicationIcon>
+    </ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup />
   <PropertyGroup>
@@ -284,9 +285,6 @@
     <None Include="Resources\5173017_antivirus_internet_protect_safe_security_icon.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\3.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\bg.jpg" />
   </ItemGroup>
   <ItemGroup>
@@ -297,9 +295,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\8725957_file_plus_alt_icon.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\DefendoBlue.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\log.png" />
@@ -332,11 +327,7 @@
     <None Include="Resources\3994376_arrow_back_left_navigation_previous_icon.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Defendo Blue.ico" />
-    <None Include="Resources\das.bmp" />
     <None Include="Resources\Defendo Blue.ico" />
-    <None Include="Resources\app-ico.bmp" />
-    <None Include="Resources\DefendoBlue1.png" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

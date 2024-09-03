@@ -63,16 +63,6 @@ namespace Defendo_Blue.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
         /// </summary>
-        internal static System.Drawing.Bitmap _1034363_advantage_protection_protect_security_shield_icon {
-            get {
-                object obj = ResourceManager.GetObject("1034363_advantage_protection_protect_security_shield_icon", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
-        /// </summary>
         internal static System.Drawing.Bitmap _199213_log_file_extension_format_icon__1_ {
             get {
                 object obj = ResourceManager.GetObject("199213_log_file_extension_format_icon (1)", resourceCulture);
@@ -223,16 +213,6 @@ namespace Defendo_Blue.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
         /// </summary>
-        internal static System.Drawing.Bitmap background_gradient_lights__2_ {
-            get {
-                object obj = ResourceManager.GetObject("background-gradient-lights (2)", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
-        /// </summary>
         internal static System.Drawing.Bitmap bg {
             get {
                 object obj = ResourceManager.GetObject("bg", resourceCulture);
@@ -241,12 +221,12 @@ namespace Defendo_Blue.Properties {
         }
         
         /// <summary>
-        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        ///   (Simge) öğesine benzeyen System.Drawing.Icon türünde yerelleştirilmiş bir kaynak arar.
         /// </summary>
-        internal static System.Drawing.Bitmap data_1575959 {
+        internal static System.Drawing.Icon Defendo_Blue {
             get {
-                object obj = ResourceManager.GetObject("data_1575959", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                object obj = ResourceManager.GetObject("Defendo_Blue", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
             }
         }
         
@@ -266,16 +246,6 @@ namespace Defendo_Blue.Properties {
         internal static System.Drawing.Bitmap log {
             get {
                 object obj = ResourceManager.GetObject("log", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
-        /// </summary>
-        internal static System.Drawing.Bitmap wallpaperflare_com_wallpaper {
-            get {
-                object obj = ResourceManager.GetObject("wallpaperflare.com_wallpaper", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
