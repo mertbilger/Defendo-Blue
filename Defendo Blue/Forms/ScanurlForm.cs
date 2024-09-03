@@ -77,13 +77,10 @@ namespace Defendo_Blue.Forms
             }
             else
             {
-                MessageBox.Show("URL daha önce taranmamış, şimdi taranıyor...", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("URL daha önce taranmamış, şimdi taranıyor... 5-10 dk sonra sonuç için tekrar deneyiniz.", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 UrlScanResult urlResult = await oVirusTotal.ScanUrlAsync(urlToScan);
 
                 string debugInfo = $"ScanId: {urlResult.ScanId}, VerboseMsg: {urlResult.VerboseMsg}";
-                MessageBox.Show(debugInfo, "Debug Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                PrintScan(urlResult);
             }
         }
 

@@ -1,6 +1,6 @@
 Mert'in yapmadıkları
 -----------------------
-EventLog dinleme olayı globale taşınacak.
+EventLog dinleme olayı globale taşınacak. // GÜNCELLENDİ
 Her metot için try catch konulacak. Anlamlı uyarılar basılacak!
 
 
@@ -18,7 +18,7 @@ Mert'in yapamadıkları
 Uygulama direkt çalışmıyor! // GÜNCELLENDİ
 Form kapandığında uygulamaya tekrardan ulaşılamıyor. // GÜNCELLENDİ
 Sağ tuş "Bilgi" hiç bir anlamı yok. // GÜNCELLENDİ
-Sürükle bırak yok!
+Sürükle bırak yok! // GÜNCELLENDİ
 URL'i 2 kere tarıyor? // GÜNCELLENDİ
 Yalan yanlış bilgi veriyor. // GÜNCELLENDİ
 Ekran kilitlendi, kilit açıldı diğer giriş tipleriyle ilgili hiç bilgi yok.

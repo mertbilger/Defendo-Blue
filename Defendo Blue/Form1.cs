@@ -6,8 +6,6 @@ using System.Windows.Forms.DataVisualization.Charting;
 using Defendo_Blue.Forms;
 using System.Net.Sockets;
 using System.Net;
-using static Defendo_Blue.Forms.WinEvent;
-using System.Management.Instrumentation;
 using System.Security;
 using System.Linq;
 
@@ -41,6 +39,14 @@ namespace Defendo_Blue
             notifyIcon.Click += notifyIcon_MouseDoubleClick;
         }
 
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (e.CloseReason == CloseReason.UserClosing)
+            {
+                e.Cancel = true; 
+                this.Hide();  
+            }
+        }
         private void notifyIcon_MouseDoubleClick(object sender, EventArgs e)
         {
             if (this.WindowState == FormWindowState.Minimized)
@@ -50,16 +56,6 @@ namespace Defendo_Blue
             this.Show();
             this.Activate();
         }
-
-        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            if (e.CloseReason == CloseReason.UserClosing)
-            {
-                e.Cancel = true; 
-                this.Hide();  
-            }
-        }
-
         private void Form1_Load(object sender, EventArgs e)
         {
             try
@@ -169,7 +165,7 @@ namespace Defendo_Blue
         private void SetupTimer()
         {
             timerUpdate = new Timer();
-            timerUpdate.Interval = 1000;
+            timerUpdate.Interval = 2000;
             timerUpdate.Tick += TimerUpdate_Tick;
             timerUpdate.Start();
         }
@@ -223,6 +219,16 @@ namespace Defendo_Blue
             }
         }
 
+        private void chartHardware_Click(object sender, EventArgs e)
+        {
+            float cpuUsage = 100 - IdleCounter.NextValue();
+            float ramAvailable = RamCounter.NextValue();
+
+            MessageBox.Show($"CPU Kullanımı: {cpuUsage}%\nKalan Bellek : {ramAvailable} MB",
+                            "CPU Bilgisi",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Information);
+        }
         private void button1_Click(object sender, EventArgs e)
         {
             FastScan hızlıTarama = new FastScan();
@@ -289,17 +295,6 @@ namespace Defendo_Blue
         {
             RegistryForm registryForm = new RegistryForm();
             registryForm.Show();
-        }
-
-        private void chartHardware_Click(object sender, EventArgs e)
-        {
-            float cpuUsage = 100 - IdleCounter.NextValue();
-            float ramAvailable = RamCounter.NextValue();
-
-            MessageBox.Show($"CPU Kullanımı: {cpuUsage}%\nKalan Bellek : {ramAvailable} MB",
-                            "CPU Bilgisi",
-                            MessageBoxButtons.OK,
-                            MessageBoxIcon.Information);
         }
 
         private void OnEntryWritten(object source, EntryWrittenEventArgs e)
