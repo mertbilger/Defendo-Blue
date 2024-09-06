@@ -40,7 +40,6 @@ C:\Users\Mert\Source\Repos\mertbilger\Defendo-Blue\Defendo Blue\bin\Debug\System
 C:\Users\Mert\Source\Repos\mertbilger\Defendo-Blue\Defendo Blue\bin\Debug\System.Security.AccessControl.xml
 C:\Users\Mert\Source\Repos\mertbilger\Defendo-Blue\Defendo Blue\bin\Debug\System.Security.Principal.Windows.xml
 C:\Users\Mert\Source\Repos\mertbilger\Defendo-Blue\Defendo Blue\obj\Debug\Defendo Blue.csproj.AssemblyReference.cache
-C:\Users\Mert\Source\Repos\mertbilger\Defendo-Blue\Defendo Blue\obj\Debug\Defendo_Blue.Form1.resources
 C:\Users\Mert\Source\Repos\mertbilger\Defendo-Blue\Defendo Blue\obj\Debug\Defendo_Blue.Forms.RegistryForm.resources
 C:\Users\Mert\Source\Repos\mertbilger\Defendo-Blue\Defendo Blue\obj\Debug\Defendo_Blue.Forms.ScanfileForm.resources
 C:\Users\Mert\Source\Repos\mertbilger\Defendo-Blue\Defendo Blue\obj\Debug\Defendo_Blue.Forms.ScanUrlForm.resources
@@ -83,3 +82,26 @@ C:\Users\Mert\source\repos\mertbilger\Defendo-Blue\Defendo Blue\bin\Debug\System
 C:\Users\Mert\source\repos\mertbilger\Defendo-Blue\Defendo Blue\bin\Debug\System.Numerics.Vectors.xml
 C:\Users\Mert\source\repos\mertbilger\Defendo-Blue\Defendo Blue\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 C:\Users\Mert\source\repos\mertbilger\Defendo-Blue\Defendo Blue\bin\Debug\System.Text.Encoding.CodePages.xml
+C:\Users\Mert\source\repos\mertbilger\Defendo-Blue\Defendo Blue\obj\Debug\Defendo_Blue.MainForm.resources
+C:\Users\Mert\source\repos\mertbilger\Defendo-Blue\Defendo Blue\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\Mert\source\repos\mertbilger\Defendo-Blue\Defendo Blue\bin\Debug\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\Mert\source\repos\mertbilger\Defendo-Blue\Defendo Blue\bin\Debug\Microsoft.Extensions.Configuration.dll
+C:\Users\Mert\source\repos\mertbilger\Defendo-Blue\Defendo Blue\bin\Debug\Microsoft.Extensions.FileProviders.Abstractions.dll
+C:\Users\Mert\source\repos\mertbilger\Defendo-Blue\Defendo Blue\bin\Debug\Microsoft.Extensions.FileProviders.Physical.dll
+C:\Users\Mert\source\repos\mertbilger\Defendo-Blue\Defendo Blue\bin\Debug\Microsoft.Extensions.FileSystemGlobbing.dll
+C:\Users\Mert\source\repos\mertbilger\Defendo-Blue\Defendo Blue\bin\Debug\Microsoft.Extensions.Primitives.dll
+C:\Users\Mert\source\repos\mertbilger\Defendo-Blue\Defendo Blue\bin\Debug\System.Text.Encodings.Web.dll
+C:\Users\Mert\source\repos\mertbilger\Defendo-Blue\Defendo Blue\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\Mert\source\repos\mertbilger\Defendo-Blue\Defendo Blue\bin\Debug\System.ValueTuple.dll
+C:\Users\Mert\source\repos\mertbilger\Defendo-Blue\Defendo Blue\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\Mert\source\repos\mertbilger\Defendo-Blue\Defendo Blue\bin\Debug\Microsoft.Extensions.Configuration.xml
+C:\Users\Mert\source\repos\mertbilger\Defendo-Blue\Defendo Blue\bin\Debug\Microsoft.Extensions.Configuration.Abstractions.xml
+C:\Users\Mert\source\repos\mertbilger\Defendo-Blue\Defendo Blue\bin\Debug\Microsoft.Extensions.FileProviders.Abstractions.xml
+C:\Users\Mert\source\repos\mertbilger\Defendo-Blue\Defendo Blue\bin\Debug\Microsoft.Extensions.FileProviders.Physical.xml
+C:\Users\Mert\source\repos\mertbilger\Defendo-Blue\Defendo Blue\bin\Debug\Microsoft.Extensions.FileSystemGlobbing.xml
+C:\Users\Mert\source\repos\mertbilger\Defendo-Blue\Defendo Blue\bin\Debug\Microsoft.Extensions.Primitives.xml
+C:\Users\Mert\source\repos\mertbilger\Defendo-Blue\Defendo Blue\bin\Debug\System.Text.Encodings.Web.xml
+C:\Users\Mert\source\repos\mertbilger\Defendo-Blue\Defendo Blue\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\Mert\source\repos\mertbilger\Defendo-Blue\Defendo Blue\bin\Debug\System.ValueTuple.xml
+C:\Users\Mert\source\repos\mertbilger\Defendo-Blue\Defendo Blue\bin\Debug\System.Configuration.ConfigurationManager.dll
+C:\Users\Mert\source\repos\mertbilger\Defendo-Blue\Defendo Blue\bin\Debug\System.Configuration.ConfigurationManager.xml

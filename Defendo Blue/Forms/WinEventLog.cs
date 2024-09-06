@@ -9,8 +9,8 @@ namespace Defendo_Blue.Forms
 {
     public partial class WinEventLog : Form
     {
-        private NotifyIcon notifyIcon1; // NotifyIcon nesnesini ekleyin
-        private DataTable dataTable; // DataTable nesnesini ekleyin
+        private NotifyIcon notifyIcon1;
+        private DataTable dataTable; 
 
       
 

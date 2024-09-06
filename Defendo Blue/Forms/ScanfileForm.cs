@@ -104,18 +104,18 @@ namespace Defendo_Blue.Forms
             }
         }
 
-        private void PrintScan(FileReport fileReport)
+        private void PrintScan(FileReport pFileReport)
         {
             StringBuilder resultMessage = new StringBuilder();
             resultMessage.AppendLine("Tarama Sonuçları\n");
-            resultMessage.AppendLine($"Scan ID: {fileReport.ScanId}");
-            resultMessage.AppendLine($"Mesaj: {fileReport.VerboseMsg}\n");
+            resultMessage.AppendLine($"Scan ID: {pFileReport.ScanId}");
+            resultMessage.AppendLine($"Mesaj: {pFileReport.VerboseMsg}\n");
             resultMessage.AppendLine(string.Format("{0,-30} {1}", "Antivirüs Motoru", "Durum"));
             resultMessage.AppendLine(new string('-', 50));
 
-            if (fileReport.ResponseCode == FileReportResponseCode.Present)
+            if (pFileReport.ResponseCode == FileReportResponseCode.Present)
             {
-                foreach (KeyValuePair<string, ScanEngine> scan in fileReport.Scans)
+                foreach (KeyValuePair<string, ScanEngine> scan in pFileReport.Scans)
                 {
                     string detectionStatus = scan.Value.Detected ? "Tespit Edildi" : "Tespit Edilmedi";
                     resultMessage.AppendLine(string.Format("{0,-30} {1}", scan.Key, detectionStatus));
@@ -125,8 +125,6 @@ namespace Defendo_Blue.Forms
             ScanResultForm resultForm = new ScanResultForm(resultMessage.ToString());
             resultForm.ShowDialog();
         }
-
-
 
         private void transparentControls()
         {

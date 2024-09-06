@@ -1,17 +1,17 @@
-﻿using System;
-using System.Drawing;
-using System.Windows.Forms;
+﻿using Defendo_Blue.Forms;
+using System;
 using System.Diagnostics;
-using System.Windows.Forms.DataVisualization.Charting;
-using Defendo_Blue.Forms;
-using System.Net.Sockets;
-using System.Net;
-using System.Security;
+using System.Drawing;
 using System.Linq;
+using System.Net;
+using System.Net.Sockets;
+using System.Security;
+using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace Defendo_Blue
 {
-    public partial class Form1 : Form
+    public partial class MainForm : Form
     {
         private ContextMenuStrip contextMenu;
         private WinEvent winEventForm;
@@ -25,9 +25,7 @@ namespace Defendo_Blue
         private Point? prevPosition = null;
         private ToolTip tooltip = new ToolTip();
 
-
-
-        public Form1()
+        public MainForm()
         {
             InitializeComponent();
             Setup();
@@ -43,10 +41,11 @@ namespace Defendo_Blue
         {
             if (e.CloseReason == CloseReason.UserClosing)
             {
-                e.Cancel = true; 
-                this.Hide();  
+                e.Cancel = true;
+                this.Hide();
             }
         }
+
         private void notifyIcon_MouseDoubleClick(object sender, EventArgs e)
         {
             if (this.WindowState == FormWindowState.Minimized)
@@ -56,13 +55,14 @@ namespace Defendo_Blue
             this.Show();
             this.Activate();
         }
+
         private string GetLocalIPAddress()
         {
-            string localIP = string.Empty;
+            var localIP = string.Empty;
 
             foreach (IPAddress ip in Dns.GetHostAddresses(Dns.GetHostName()))
             {
-                if (ip.AddressFamily == AddressFamily.InterNetwork) 
+                if (ip.AddressFamily == AddressFamily.InterNetwork)
                 {
                     localIP = ip.ToString();
                     break;
@@ -71,11 +71,12 @@ namespace Defendo_Blue
 
             return localIP;
         }
+
         private void Form1_Load(object sender, EventArgs e)
         {
             try
             {
-                string localIP = GetLocalIPAddress();
+                var localIP = GetLocalIPAddress();
 
                 label3.Text = $"Yerel IP Adresi: {localIP}\n";
                 eventLog = new EventLog(watchLog);
@@ -129,14 +130,13 @@ namespace Defendo_Blue
             contextMenu.Items.Add(option4);
 
             notifyIcon.ContextMenuStrip = contextMenu;
-            
         }
 
         private void SetupChart()
         {
             chartHardware.Series.Clear();
 
-            Series cpuSeries = new Series("CPU Kullanımı");
+            var cpuSeries = new Series("CPU Kullanımı");
             cpuSeries.ChartType = SeriesChartType.Spline;
             cpuSeries.BorderWidth = 3;
             cpuSeries.Color = Color.FromArgb(150, Color.Blue);
@@ -228,18 +228,19 @@ namespace Defendo_Blue
                             MessageBoxButtons.OK,
                             MessageBoxIcon.Information);
         }
+
         private void button1_Click(object sender, EventArgs e)
         {
             FastScan hızlıTarama = new FastScan();
             hızlıTarama.Show();
         }
 
-
         private void button2_Click(object sender, EventArgs e)
         {
             ScanUrlForm scanurlForm = new ScanUrlForm();
             scanurlForm.Show();
         }
+
         private void button3_Click_1(object sender, EventArgs e)
         {
             ScanfileForm scanfileForm = new ScanfileForm();
@@ -333,15 +334,15 @@ namespace Defendo_Blue
                     }
                 }
 
-                if (logtypeCode == 2)
+                if (logtypeCode == LoginTypes.YerelLogin.GetHashCode())
                 {
-                    string logonTime = entry.TimeGenerated.ToString("yyyy-MM-dd HH:mm:ss");
+                    var logonTime = entry.TimeGenerated.ToString("yyyy-MM-dd HH:mm:ss");
 
-                    string notificationText =
+                    var notificationText =
                                               $"Kullanıcı : {userName}\n" +
                                               $"Saat : {logonTime}\n" +
                                               $"IP Adresi : {ipAddress}\n";
-                                              
+
 
                     notifyIcon.ShowBalloonTip(5000, logtype, notificationText, ToolTipIcon.Info);
                 }
@@ -363,6 +364,5 @@ namespace Defendo_Blue
             label4.Parent = picBack;
             label4.BackColor = Color.Transparent;
         }
-
     }
 }
