@@ -1,7 +1,7 @@
 Mert'in yapmadıkları
 -----------------------
 EventLog dinleme olayı globale taşınacak. // GÜNCELLENDİ
-Her metot için try catch konulacak. Anlamlı uyarılar basılacak!
+Her metot için try catch konulacak. Anlamlı uyarılar basılacak! //GÜNCELLENDİ
 
 
 
