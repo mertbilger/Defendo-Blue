@@ -23,7 +23,7 @@ URL'i 2 kere tarıyor? // GÜNCELLENDİ
 Yalan yanlış bilgi veriyor. // GÜNCELLENDİ
 Ekran kilitlendi, kilit açıldı diğer giriş tipleriyle ilgili hiç bilgi yok.
 Event loglar kayıt oluşmadan görünmüyor. // GÜNCELLENDİ
-desktop.ini dosyaları hiç görünmesin.
+desktop.ini dosyaları hiç görünmesin. // GÜNCELLENDİ
 
 
 
