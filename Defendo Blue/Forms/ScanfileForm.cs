@@ -1,16 +1,17 @@
 ﻿using LiteDB;
 using System;
-using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using VirusTotalNet;
 using VirusTotalNet.Objects;
 using VirusTotalNet.ResponseCodes;
 using VirusTotalNet.Results;
-using Defendo_Blue.Models; 
+using Defendo_Blue.Models;
+using System.Collections.Generic;
 
 namespace Defendo_Blue.Forms
 {
@@ -18,24 +19,35 @@ namespace Defendo_Blue.Forms
     {
         private readonly string apiKey = "77fd1f6a20cd3fb04fe63493fc40d4628f661aed7367fb63ab8018e1e423bb31";
         private OpenFileDialog openFileDialog;
-        private string databasePath = @"C:\Users\mertb\source\repos\mertbilger\Defendo-Blue\Defendo Blue\ScannedFiles.db";
+        private string databasePath;
 
         public ScanfileForm()
         {
             InitializeComponent();
-
+            InitializeDatabase();
             this.AllowDrop = true;
             this.DragEnter += new DragEventHandler(Form_DragEnter);
             this.DragDrop += new DragEventHandler(Form_DragDrop);
             transparentControls();
-
             openFileDialog = new OpenFileDialog
             {
                 Filter = "All Files (*.*)|*.*",
                 Title = "Dosya Seç"
             };
-
             addFile.Click += AddFile_Click;
+        }
+
+        private void InitializeDatabase()
+        {
+            string appDataPath = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
+            string dbDirectory = Path.Combine(appDataPath, "Defendo-Blue");
+            Directory.CreateDirectory(dbDirectory);
+            databasePath = Path.Combine(dbDirectory, "ScannedFiles.db");
+
+            using (var db = new LiteDatabase(databasePath))
+            {
+                var scannedFilesCollection = db.GetCollection<ScannedFileDB>("scannedFiles");
+            }
         }
 
         private async void AddFile_Click(object sender, EventArgs e)
@@ -136,7 +148,6 @@ namespace Defendo_Blue.Forms
                     };
 
                     scannedFilesCollection.Insert(scannedFile);
-                    MessageBox.Show("Dosya başarıyla veritabanına kaydedildi.");
                 }
             }
             catch (Exception ex)
@@ -173,18 +184,18 @@ namespace Defendo_Blue.Forms
             return false;
         }
 
-        private void PrintScan(FileReport pFileReport)
+        private void PrintScan(FileReport fileReport)
         {
             StringBuilder resultMessage = new StringBuilder();
             resultMessage.AppendLine("Tarama Sonuçları\n");
-            resultMessage.AppendLine($"Scan ID: {pFileReport.ScanId}");
-            resultMessage.AppendLine($"Mesaj: {pFileReport.VerboseMsg}\n");
+            resultMessage.AppendLine($"Scan ID: {fileReport.ScanId}");
+            resultMessage.AppendLine($"Mesaj: {fileReport.VerboseMsg}\n");
             resultMessage.AppendLine(string.Format("{0,-30} {1}", "Antivirüs Motoru", "Durum"));
             resultMessage.AppendLine(new string('-', 50));
 
-            if (pFileReport.ResponseCode == FileReportResponseCode.Present)
+            if (fileReport.ResponseCode == FileReportResponseCode.Present)
             {
-                foreach (KeyValuePair<string, ScanEngine> scan in pFileReport.Scans)
+                foreach (KeyValuePair<string, ScanEngine> scan in fileReport.Scans)
                 {
                     string detectionStatus = scan.Value.Detected ? "Tespit Edildi" : "Tespit Edilmedi";
                     resultMessage.AppendLine(string.Format("{0,-30} {1}", scan.Key, detectionStatus));
