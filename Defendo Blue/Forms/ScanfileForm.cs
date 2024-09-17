@@ -1,13 +1,16 @@
-﻿using System;
+﻿using LiteDB;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
+using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using VirusTotalNet;
 using VirusTotalNet.Objects;
 using VirusTotalNet.ResponseCodes;
 using VirusTotalNet.Results;
+using Defendo_Blue.Models; 
 
 namespace Defendo_Blue.Forms
 {
@@ -15,6 +18,7 @@ namespace Defendo_Blue.Forms
     {
         private readonly string apiKey = "77fd1f6a20cd3fb04fe63493fc40d4628f661aed7367fb63ab8018e1e423bb31";
         private OpenFileDialog openFileDialog;
+        private string databasePath = @"C:\Users\mertb\source\repos\mertbilger\Defendo-Blue\Defendo Blue\ScannedFiles.db";
 
         public ScanfileForm()
         {
@@ -52,6 +56,8 @@ namespace Defendo_Blue.Forms
                 {
                     MessageBox.Show("Dosya daha önce tarandı.", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     PrintScan(fileReport);
+
+                    SaveScannedFileToDatabase(Path.GetFileName(filePath), filePath, IsFileMalicious(fileReport), fileReport.ScanId);
                 }
                 else
                 {
@@ -59,10 +65,11 @@ namespace Defendo_Blue.Forms
 
                     ScanResult scanResult = await virusTotal.ScanFileAsync(fileBytes, Path.GetFileName(filePath));
                     MessageBox.Show("Tarama kuyruğa alındı, 10 dakika sonra sonuç için tekrar deneyin...", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    SaveScannedFileToDatabase(Path.GetFileName(filePath), filePath, false, scanResult.ScanId);
                 }
             }
         }
-
 
         private void Form_DragEnter(object sender, DragEventArgs e)
         {
@@ -96,12 +103,74 @@ namespace Defendo_Blue.Forms
                 {
                     MessageBox.Show("Dosya daha önce tarandı.", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     PrintScan(fileReport);
+
+                    SaveScannedFileToDatabase(Path.GetFileName(filePath), filePath, IsFileMalicious(fileReport), fileReport.ScanId);
                 }
                 else
                 {
                     MessageBox.Show("Dosya daha önce taranmamış, şimdi taranıyor...", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    ScanResult scanResult = await virusTotal.ScanFileAsync(fileBytes, Path.GetFileName(filePath));
+                    MessageBox.Show("Tarama kuyruğa alındı, 10 dakika sonra sonuç için tekrar deneyin...", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    SaveScannedFileToDatabase(Path.GetFileName(filePath), filePath, false, scanResult.ScanId);
                 }
             }
+        }
+
+        private void SaveScannedFileToDatabase(string fileName, string filePath, bool isMalicious, string scanId)
+        {
+            try
+            {
+                using (var db = new LiteDatabase(databasePath))
+                {
+                    var scannedFilesCollection = db.GetCollection<ScannedFileDB>("scannedFiles");
+
+                    var scannedFile = new ScannedFileDB
+                    {
+                        FileName = fileName,
+                        FilePath = filePath,
+                        IsMalicious = isMalicious,
+                        ScanId = scanId,
+                        ScanDate = DateTime.Now
+                    };
+
+                    scannedFilesCollection.Insert(scannedFile);
+                    MessageBox.Show("Dosya başarıyla veritabanına kaydedildi.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Veritabanına veri eklenirken bir hata oluştu: {ex.Message}", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private bool IsFileMalicious(FileReport fileReport)
+        {
+            string[] trustedEngines = new string[]
+            {
+                "Kaspersky",
+                "BitDefender",
+                "Microsoft",
+                "Avira",
+                "McAfee",
+                "F-Secure",
+                "ESET-NOD32",
+                "Symantec",
+                "Malwarebytes",
+                "AVG",
+                "Avast"
+            };
+
+            foreach (var scan in fileReport.Scans)
+            {
+                if (trustedEngines.Contains(scan.Key) && scan.Value.Detected)
+                {
+                    return true;
+                }
+            }
+
+            return false;
         }
 
         private void PrintScan(FileReport pFileReport)

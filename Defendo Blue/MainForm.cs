@@ -32,12 +32,12 @@ namespace Defendo_Blue
             TransparentControls();
             SetupChart();
             SetupTimer();
-            this.Load += Form1_Load;
-            this.FormClosing += Form1_FormClosing;
+            this.Load += Main_Load;
+            this.FormClosing += Main_FormClosing;
             notifyIcon.Click += notifyIcon_MouseDoubleClick;
         }
 
-        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        private void Main_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (e.CloseReason == CloseReason.UserClosing)
             {
@@ -72,7 +72,7 @@ namespace Defendo_Blue
             return localIP;
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void Main_Load(object sender, EventArgs e)
         {
             try
             {
