@@ -98,6 +98,6 @@ if __name__ == "__main__":
     start_time = [time.time()]
     blocked_ips = {}
 
-    print("Monitoring network traffic...")
-    print(f"Whitelist file path: {whitelist_file}")
+    print("Ag Trafigi Izleniyor... ")
+    print(f"Whitelist dosya yolu: {whitelist_file}")
     sniff(filter="ip", prn=packet_callback)
