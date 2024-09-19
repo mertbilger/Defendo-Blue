@@ -366,6 +366,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Defendo Blue.ico" />
+    <Content Include="Firewall\Firewall.py" />
+    <Content Include="Firewall\Not.txt" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
