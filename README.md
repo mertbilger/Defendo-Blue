@@ -10,9 +10,10 @@ Defendo Blue protects your PC against threats by offering URL scanning, file sca
 
 ![Images From the Application](https://i.imghippo.com/files/rzcnY1725375234.png)
 
-  
+## Images from Firewall
+![Images From the Firewall](https://i.imghippo.com/files/WcXft1726929525.png)   
 ## Teşekkür
 
 - Sayın [@sinanyucel](https://github.com/sinanyucel)'e Defendo Blue antivirüs uygulamasının geliştirilmesinde gösterdiği değerli katkılar ve yardımları için içten teşekkürlerimi sunarım. Desteğiniz ve rehberliğiniz, projemizin başarılı bir şekilde ilerlemesine büyük katkı sağladı. 
 
-  
+
